@@ -16,8 +16,8 @@
             ?>              
                     <div class="position-center">
                         
-                        <form action="{{URL::to('/ad/saveSP')}}" method="post" enctype="mutipart/form-data">
-                            {{csrf_field()}}
+                        <form action="/ad/saveSP" method="post" enctype="multipart/form-data">
+                            @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên Sản Phẩm</label>
                             <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Tên Danh Mục">
@@ -28,9 +28,9 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Hình Ảnh Sản Phẩm</label>
-                            <input type="file" name="product_image" class="form-control" id="exampleInputEmail1">
+                            <input type="file" name="product_image" class="form-control">
                         </div>
-                        <div class="form-group">
+                         <div class="form-group">
                             <label for="exampleInputPassword1">Mô Tả Sản Phẩm</label>
                             <textarea style="resize: none" rows="3" class="form-control" name="product_desc" id="exampleInputPassword1" placeholder="Mô Tả Sản Phẩm"></textarea>
                         </div>  
@@ -61,12 +61,12 @@
                                 <option value="0">Hiển Thị</option>
                                                                 
                             </select>
-                        </div>
+                        </div> 
                         <button type="submit" name ="add_product"class="btn btn-info">Thêm</button>
                     </form>
-                    </div>
+                     </div>
 
                 </div>
             </section>
     </div>
- @endsection
+  @endsection

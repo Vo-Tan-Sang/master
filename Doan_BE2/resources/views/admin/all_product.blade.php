@@ -58,7 +58,7 @@ if($message){
               <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
               <td>{{$pro->product_name}}</td>
               <td>{{$pro->product_price}}</td>
-              <td><img src="{{$pro->product_image}}" alt="" width="100"></td>
+              <td><img src="/up/{{$pro->product_image}}" alt="" width="100"></td>
               <td>{{$pro->category_name}}</td>
               <td>{{$pro->brand_name}}</td>
               <td><span class="text-ellipsis">
