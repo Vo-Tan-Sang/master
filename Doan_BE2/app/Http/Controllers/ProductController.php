@@ -24,28 +24,38 @@ class ProductController extends Controller
         return view('admin.index')->with('admin.all_product',$manager_product);
     }
     public function save_product(Request $request){
-        $data = array();
-        $data['product_name'] = $request->product_name;
-        $data['product_price'] = $request->product_price;  
-        $data['product_decs'] = $request->product_desc;
-        $data['product_content'] = $request->product_content;  
-        $data['category_id'] = $request->product_cate;      
-        $data['brand_id'] = $request->product_brand;  
-        $data['product_status'] = $request->product_status;   
-        $data['product_image'] = $request->product_image;  
-        $get_image =$request->file('product_image');
-        if($get_image){        
-            $new_image = rand(0,99).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('public/up',$new_image);
+        // $data = array();
+        // $data['product_name'] = $request->product_name;
+        // $data['product_price'] = $request->product_price;  
+        // $data['product_decs'] = $request->product_desc;
+        // $data['product_content'] = $request->product_content;  
+        // $data['category_id'] = $request->product_cate;      
+        // $data['brand_id'] = $request->product_brand;  
+        // $data['product_status'] = $request->product_status;   
+        // $data['product_image'] = $request->product_image;  
+        //$get_image =$request->file('product_image');
+        if($request->has('product_image')){  
+            $file = $request->product_image;      
+            $new_image =$file->getClientOriginalName();
+            $data = array();
+            $data['product_name'] = $request->product_name;
+            $data['product_price'] = $request->product_price;  
+            $data['product_decs'] = $request->product_desc;
+            $data['product_content'] = $request->product_content;  
+            $data['category_id'] = $request->product_cate;      
+            $data['brand_id'] = $request->product_brand;  
+            $data['product_status'] = $request->product_status;   
+            $data['product_image'] = $new_image;  
+            $file->move(public_path('up'),$new_image);
             $data['product_image'] = $new_image;         
             DB::table('product')->insert($data);
             Session::put('message','Thêm sản phẩm thành công');
             return Redirect::to('/ad/all_product');
-        }
-         $data['product_image'] == '';        
-          DB::table('product')->insert($data);
-          Session::put('message','Thêm sản phẩm thành công');
-         return Redirect::to('/ad/all_product');
+         }
+        //  $data['product_image'] == '';        
+        //   DB::table('product')->insert($data);
+        //   Session::put('message','Thêm sản phẩm thành công');
+        //  return Redirect::to('/ad/all_product');
         // $data = $request->all();       
         // $image_name = time().$request->file('product_image')->getClientOriginalName();
         // $path = $request->file('product_image')->storeAs('product_images', $image_name, 'public');
