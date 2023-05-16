@@ -17,7 +17,7 @@ html, body{
 	font-family: 'Roboto', sans-serif;
     font-size: 100%;
     overflow-x: hidden;
-    background:rgb(173, 203, 174);
+    background:rgb(66, 85, 125);
 	background-size:cover;
 }
 body a{
@@ -243,7 +243,7 @@ ul.sidebar-menu li a.active i {
     width:100%;
 }
 .brand {
-    background:#4f9496;
+    background:#4f7496;
     float:left;
     width:240px;
     height:80px;
@@ -952,7 +952,7 @@ div#graph1,div#graph4,div#graph5,div#graph6,div#graph7,div#graph8,div#graph9 {
     border-bottom: 1px solid #e1ab91 ! important;
 }
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-    border-bottom: 1px solid #e9e9e9 ! important;
+    border-bottom: 1px solid #000000 ! important;
 }
 .progress.progress-right {
     width: 25%;
@@ -1457,7 +1457,7 @@ section#tables  p {
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
 	font-size: 0.9em;
-	color: #999;
+	color: rgb(0, 0, 0);
 	border-top: none !important;
 }
 .tab-content > .active {
@@ -2359,7 +2359,7 @@ ul.inbox-pagination li {
 }
 /*-- gallery --*/
 .w3layouts-main h2 {
-	color: #8b5c7e;
+	color: #ffffff;
     font-size: 29px;
     letter-spacing: 2px;
     text-transform: uppercase;
