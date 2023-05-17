@@ -12,11 +12,18 @@ class AdminController extends Controller
 {
      public function AuthLogin(){
          $admin_id = Session::get('admin_id');
+         if($admin_id){
+            return Redirect::to('admin.dashboard');
+         }
+         else{
+            return Redirect::to('/ad/login_admin')->send();
+         }
      }
     public function index(){
         return view ('admin.login');
     }
     public function show(){
+        $this->AuthLogin();
         return view ('admin.dashboard');
     }
     public function dashboard(Request $request){
