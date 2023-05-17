@@ -100,3 +100,4 @@ Route::get('/shop/sp/{id?}',function(String $id) {
   Route::get('/ad/delete_product/{product_id}',[ProductController::class,'delete_product']);
   //save san pham
   Route::post('/ad/updateSP/{product_id}',[ProductController::class,'update_product']);
+  Route::post('/ad/timkiemSP',[ProductController::class,'search']);
