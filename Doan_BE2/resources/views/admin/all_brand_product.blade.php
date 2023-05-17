@@ -70,7 +70,7 @@ if($message){
               <td>
                 <a href="{{URL::to('/ad/edit_brand_product/'.$cate_pro->brand_id)}}" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i></a>
                 <a onclick="return confirm('Bạn Có Chắc Muốn Xóa Thương Hiệu Này Hay Không?')" href="{{URL::to('/ad/delete_brand_product/'.$cate_pro->brand_id)}}" class="active" ui-toggle-class=""> <i class="fa fa-times text-danger text"></i></a>
-                
+               
               </td>
             </tr>     
             @endforeach   
