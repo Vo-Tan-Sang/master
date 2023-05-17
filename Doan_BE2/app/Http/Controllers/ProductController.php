@@ -116,8 +116,4 @@ class ProductController extends Controller
         Session::put('message','Xóa Thành Công');
         return Redirect::to('/ad/all_product');
     } 
-    // public function search(Rediect $request)
-    // {
-
-    // }
 }
