@@ -80,10 +80,12 @@ Route::get('/shop/sp/{id?}',function(String $id) {
   Route::get('/ad/active-brand-product/{brand_product_id}',[BrandProduct::class,'active_brand_product']); 
   //brand_update
   Route::get('/ad/edit_brand_product/{brand_product_id}',[BrandProduct::class,'edit_brand_product']);
-  //xoa danh muc
+  //xoa thuong hieu
   Route::get('/ad/delete_brand_product/{brand_product_id}',[BrandProduct::class,'delete_brand_product']);
-  //save danh muc
+  //save thuong hieu
   Route::post('/ad/updateTH/{brand_product_id}',[BrandProduct::class,'update_brand_product']);
+  //Tim kiem thuong hieu
+  Route::post('/ad/timkiemBR',[BrandProduct::class,'searchBrand']);
 
 
 
