@@ -43,13 +43,12 @@ use Illuminate\Support\Facades\DB;
 //Frontend
 Route::get('/',[Front\HomeController::class,'index']);
 Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
-Route::get('/shop/sp/{id?}',function(String $id) {  
-    $product = DB::table('products')
-    -> where('products.brand_id','=',$id)
-    ->join('product_images','product_images.product_id','=', 'products.id')
-    ->get();
-    return view('Frontend\ds',compact('product'));
-});
+// Route::get('/shop/sp/{id?}',function(String $id) {  
+//     $product = DB::table('product')
+//      -> where('product.brand_id','=',$id)
+//     ->join('product_image','product_image.product_id','=', 'product.id')->get();
+//      return view('Frontend\ds',compact('product'));
+// });
 //backend
 //Route::get('/admin',[AdminController::class,'index']);
  Route::get('/ad/login_admin',[AdminController::class,'index']);
@@ -110,9 +109,24 @@ Route::get('/shop/sp/{id?}',function(String $id) {
   Route::post('/ad/updateSP/{product_id}',[ProductController::class,'update_product']);
   Route::post('/ad/timkiemSP',[ProductController::class,'search']);
 
+
+
+  // login user :
+  // Route::get('/login',[AuthManager::class,'login'])->name('login');
+  // Route::post('/login',[AuthManager::class,'loginPost'])->name('login.post');
+  // Route::get('/registration',[AuthManager::class,'registration'])->name('registration');
+  // Route::post('/registration',[AuthManager::class,'registrationPost'])->name('registration.post');
+  // Route::get('/logout',[AuthManager::class,'logout'])->name('logout');
+
+  //Route::get('/product/{brand_id}',[Front\HomeController::class,'viewDM']);
+
+  // view san phẩm theo DM :
+  Route::get('/category/{brand_id}',[Front\HomeController::class,'category'])->name('category');
+
   //User
   Route::get('/ad/all_user',[UserController::class,'all_user']);
     //xoa user
     Route::get('/ad/delete_user/{id}',[UserController::class,'delete_user']);
     //Tim kiem user
     Route::post('/ad/timkiemUser',[UserController::class,'searchUser']);
+

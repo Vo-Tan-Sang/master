@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Laravel </title>
+	<title>Levents </title>
 	<link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -112,10 +112,15 @@
 						<li><a href="index.html">Trang chủ</a></li>
 						<li><a href="#">Sản phẩm</a>
 							<ul class="sub-menu">
-								<li><a href="shop/sp/{{1}}">Áo</a></li>
+								@foreach ($category as $item)
+									<li><a href="{{route('category',['brand_id' =>$item->category_id])}}">{{$item->category_name}}</a></li>
+								@endforeach
+								
+								 {{-- dự phòng : --}}
+								{{-- <li><a href="shop/sp/{{1}}">Áo</a></li>
 								<li><a href="shop/sp/{{2}}">Quần</a></li>
 								<li><a href="shop/sp/{{3}}">Balo</a></li>
-								<li><a href="shop/sp/{{4}}">Khăn Cổ</a></li>
+								<li><a href="shop/sp/{{4}}">Khăn Cổ</a></li> --}}
 							</ul>
 						</li>
 						<li><a href="about.html">Giới thiệu</a></li>
@@ -177,53 +182,56 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="beta-products-list">
-							<h4>New Products</h4>
-							<div class="beta-products-details">
-								
-								<div class="clearfix"></div>
-							</div>
-
+							<h4>New Products</h4>						
+														
 							<div class="row">
+								@foreach ($all_product as $key =>$items)
 								<div class="col-sm-3">
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="product.html"><img src="assets/dest/images/products/1.jpg" alt=""></a>
+											<img src="up/{{$items->product_image}}" alt="">
 										</div>
 										<div class="single-item-body">
-											<p class="single-item-title">Sample Woman Top</p>
+											<p class="single-item-title">{{$items->product_name}}</p>
+											<br>
 											<p class="single-item-price">
-												<span>$34.55</span>
+												<span>{{$items->product_price}}</span>
+												<br>
+												<br>
 											</p>
 										</div>
-										<div class="single-item-caption">
+										{{-- <div class="single-item-caption">
 											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
 											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
-										</div>
+										</div> --}}
 									</div>
 								</div>
-								
-							</div>
+								@endforeach
+							</div>						
+							
 						</div> <!-- .beta-products-list -->
-
+						
 						<div class="space50">&nbsp;</div>
 
 						<div class="beta-products-list">
-							<h4>Top Products</h4>
 							<div class="beta-products-details">
-							
 								<div class="clearfix"></div>
 							</div>
 							<div class="row">
+								{{-- @foreach ($category as $key =>$items)
 								<div class="col-sm-3">
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="product.html"><img src="assets/dest/images/products/1.jpg" alt=""></a>
+											<img src="up/{{$items->product_image}}" alt="">
 										</div>
 										<div class="single-item-body">
-											<p class="single-item-title">Sample Woman Top</p>
+											<p class="single-item-title">{{$items->product_name}}</p>
+											<br>
 											<p class="single-item-price">
-												<span>$34.55</span>
+												<span>{{$items->product_price}}</span>
+												<br>
+												<br>
 											</p>
 										</div>
 										<div class="single-item-caption">
@@ -233,7 +241,7 @@
 										</div>
 									</div>
 								</div>
-								
+								@endforeach --}}
 							</div>
 						</div> <!-- .beta-products-list -->
 					</div>
