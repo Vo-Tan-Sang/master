@@ -177,33 +177,22 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="beta-products-list">
-							<h4><b>Women's</b></h4>
+							<h4>New Products</h4>
 							<div class="beta-products-details">
-								<p class="pull-left">438 styles found</p>
+								
 								<div class="clearfix"></div>
 							</div>
+
 							<div class="row">
-							{{-- @foreach($womenProducts as $womenProduct)
 								<div class="col-sm-3">
 									<div class="single-item">
-										@if($womenProduct->discount != null)
-										<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div>
-										@endif
-									</div>
-
 										<div class="single-item-header">
-											<a href="product.html"><img src="front/img/products/{{ $womenProduct->productImages[0]->path}}" alt=""></a>
+											<a href="product.html"><img src="assets/dest/images/products/1.jpg" alt=""></a>
 										</div>
 										<div class="single-item-body">
-										<p class="single-item-title">{{ $womenProduct->tag}}</p>
-											<p class="single-item-title">{{ $womenProduct->name }}</p>
+											<p class="single-item-title">Sample Woman Top</p>
 											<p class="single-item-price">
-											@if($womenProduct->discount != null)
-												<span class="flash-del">${{ $womenProduct->discount }}</span>
-												<span class="flash-sale">${{ $womenProduct->price }}</span>
-												@else
-												${{ $womenProduct->price }}
-												@endif
+												<span>$34.55</span>
 											</p>
 										</div>
 										<div class="single-item-caption">
@@ -212,41 +201,29 @@
 											<div class="clearfix"></div>
 										</div>
 									</div>
-								</div>	
-								@endforeach							 --}}
+								</div>
+								
 							</div>
 						</div> <!-- .beta-products-list -->
 
 						<div class="space50">&nbsp;</div>
 
 						<div class="beta-products-list">
-							<h4><b>Men's</b></h4>
+							<h4>Top Products</h4>
 							<div class="beta-products-details">
-								<p class="pull-left">438 styles found</p>
+							
 								<div class="clearfix"></div>
 							</div>
-							<div class="row">								
-							{{-- @foreach($menProducts as $menProduct)
+							<div class="row">
 								<div class="col-sm-3">
 									<div class="single-item">
-										@if($menProduct->discount != null)
-										<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div>
-										@endif
-									</div>
-
 										<div class="single-item-header">
-											<a href="product.html"><img src="front/img/products/{{ $menProduct->productImages[0]->path}}" alt=""></a>
+											<a href="product.html"><img src="assets/dest/images/products/1.jpg" alt=""></a>
 										</div>
 										<div class="single-item-body">
-										<p class="single-item-title">{{ $menProduct->tag}}</p>
-											<p class="single-item-title">{{ $menProduct->name }}</p>
+											<p class="single-item-title">Sample Woman Top</p>
 											<p class="single-item-price">
-											@if($womenProduct->discount != null)
-												<span class="flash-del">${{ $menProduct->discount }}</span>
-												<span class="flash-sale">${{ $menProduct->price }}</span>
-												@else
-												${{$menProduct->price }}
-												@endif
+												<span>$34.55</span>
 											</p>
 										</div>
 										<div class="single-item-caption">
@@ -255,8 +232,7 @@
 											<div class="clearfix"></div>
 										</div>
 									</div>
-								</div>	
-								@endforeach							 --}}
+								</div>
 								
 							</div>
 						</div> <!-- .beta-products-list -->
@@ -266,7 +242,7 @@
 
 			</div> <!-- .main-content -->
 		</div> <!-- #content -->
-	</div> <!-- .container -->
+	</div> 
 
 	<div id="footer" class="color-div">
 		<div class="container">
