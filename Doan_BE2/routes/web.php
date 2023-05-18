@@ -71,6 +71,13 @@ Route::get('/shop/sp/{id?}',function(String $id) {
  //save danh muc
  Route::post('/ad/updateDM/{category_product_id}',[CategoryProduct::class,'update_category_product']);
 
+  //Admin
+  Route::get('/ad/all_admin',[AdminController::class,'all_admin']);
+    //xoa admin
+    Route::get('/ad/delete_admin/{id}',[AdminController::class,'delete_admin']);
+    //Tim kiem admin
+    Route::post('/ad/timkiemAdmin',[AdminController::class,'searchAdmin']);
+
 
   //brand_product_them
   Route::get('/ad/add_brand_product',[BrandProduct::class,'add_brand_product']);

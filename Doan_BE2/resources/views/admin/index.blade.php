@@ -134,6 +134,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="{{URL::to('/ad/all_user')}}">Liệt Kê Người Dùng</a></li>                        
                     </ul>
                 </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-glass"></i>
+                        <span>Admin</span>
+                    </a>
+                    <ul class="sub">
+						<li><a href="{{URL::to('/ad/all_admin')}}">Liệt Kê Danh Sách Admin</a></li>                        
+                    </ul>
+                </li>
             </ul>
 		            </div>
         <!-- sidebar menu end-->
