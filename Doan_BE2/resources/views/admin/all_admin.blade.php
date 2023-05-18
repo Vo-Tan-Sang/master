@@ -43,8 +43,8 @@ if($message){
                   <input type="checkbox"><i></i>
                 </label>
               </th>
-              <th>ID Admin</th>
-              <th>Tên Admin</th>
+              <th>ID</th>
+              <th>TênAdmin</th>
               <th>Email</th>
               <th>Password</th> 
               <th>Phone</th>
