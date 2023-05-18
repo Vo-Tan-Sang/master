@@ -43,7 +43,7 @@ class CategoryProduct extends Controller
         $edit_category_product = DB::table('product_categories')->where('category_id',$category_product_id)->get();
         $manager_category_product = view('admin.edit_category_product')->with('edit_category_product',$edit_category_product);
         return view('admin.index')->with('admin.edit_category_product',$manager_category_product);
-    } 
+    }       
     public function update_category_product(Request $request,$category_product_id){
         $data = array();
         $data['category_name'] = $request->category_product_name;
