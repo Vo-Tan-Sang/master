@@ -5,6 +5,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Front;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\BrandProduct;
 use Illuminate\Support\Facades\DB;
@@ -101,3 +102,8 @@ Route::get('/shop/sp/{id?}',function(String $id) {
   //save san pham
   Route::post('/ad/updateSP/{product_id}',[ProductController::class,'update_product']);
   Route::post('/ad/timkiemSP',[ProductController::class,'search']);
+
+  //User
+  Route::get('/ad/all_user',[UserController::class,'all_user']);
+    //xoa user
+    Route::get('/ad/delete_user/{id}',[UserController::class,'delete_user']);
