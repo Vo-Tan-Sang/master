@@ -18,13 +18,13 @@
         <div class="col-sm-4">
         </div>
         <div class="col-sm-3">
-        <!-- <form action="{{URL::to('/ad/timkiemBR')}}" method="post">
+        <form action="{{URL::to('/ad/timkiemUser')}}" method="post">
             {{csrf_field()}}
           <div class="input-group">
             <input type="text" name ="keywords_submit" class="input-sm form-control" placeholder="Search">
             <input type="submit" name ="search_items" class="btn btn-info btn-sm" value="Tìm Kiếm" style="margin-bottom: -24px;">
           </div>
-          </form> -->
+          </form>
         </div>
       </div>
       <div class="table-responsive">
@@ -64,7 +64,6 @@ if($message){
               </span></td>
               <td>
                 <a onclick="return confirm('Bạn Có Chắc Muốn Xóa Người Dùng Này Hay Không?')" href="{{URL::to('/ad/delete_user/'.$pro->id)}}" class="active" ui-toggle-class=""> <i class="fa fa-times text-danger text"></i></a>
-               
               </td>
             </tr>
                  

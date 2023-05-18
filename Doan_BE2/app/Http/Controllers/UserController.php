@@ -19,4 +19,9 @@ class UserController extends Controller
         Session::put('message','Xóa Người Dùng Thành Công');
         return Redirect::to('/ad/all_user');
     } 
+    public function searchUser(Request $request){
+        $keywords = $request->keywords_submit; 
+        $search_user = DB::table('users')->where('id','name','email'.$keywords.'password')->get();
+        return view('admin.all_search_user')->with('search_user',$search_user);
+    }
 }
