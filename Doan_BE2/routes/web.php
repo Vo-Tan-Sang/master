@@ -109,3 +109,5 @@ Route::get('/shop/sp/{id?}',function(String $id) {
   Route::get('/ad/all_user',[UserController::class,'all_user']);
     //xoa user
     Route::get('/ad/delete_user/{id}',[UserController::class,'delete_user']);
+    //Tim kiem user
+    Route::post('/ad/timkiemUser',[UserController::class,'searchUser']);
