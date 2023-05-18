@@ -48,7 +48,7 @@ class BrandProduct extends Controller
     public function update_brand_product(Request $request,$brand_product_id){
         $data = array();
         $data['brand_name'] = $request->brand_product_name;
-        $data['brand_decs'] = $request->category_product_desc;
+        $data['brand_decs'] = $request->brand_product_desc;
         DB::table('brand')->where('brand_id',$brand_product_id)->update($data);
         Session::put('message','Update Thành Công');
         return Redirect::to('/ad/all_brand_product');
@@ -58,4 +58,10 @@ class BrandProduct extends Controller
         Session::put('message','Xóa Thương Hiệu Thành Công');
         return Redirect::to('/ad/all_brand_product');
     } 
+    public function searchBrand(Request $request){
+        $keywords = $request->keywords_submit; 
+
+        $search_brand = DB::table('brand')->where('brand_name','like','%'.$keywords.'%')->get();
+        return view('admin.all_search_brand')->with('search_brand',$search_brand);
+    }
 }

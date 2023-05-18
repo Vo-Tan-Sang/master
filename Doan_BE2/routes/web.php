@@ -53,7 +53,7 @@ Route::get('/shop/sp/{id?}',function(String $id) {
 //Route::get('/admin',[AdminController::class,'index']);
  Route::get('/ad/login_admin',[AdminController::class,'index']);
  //trang chu 
- Route::get('/ad/dashboard',[AdminController::class,'show']);
+ Route::get('/ad/dashboard',[AdminController::class,'show']); 
  Route::post('/ad/admin-dashboard',[AdminController::class,'dashboard']);
  Route::get('/ad/logout',[AdminController::class,'logout']);
  //category_product_them
@@ -80,10 +80,12 @@ Route::get('/shop/sp/{id?}',function(String $id) {
   Route::get('/ad/active-brand-product/{brand_product_id}',[BrandProduct::class,'active_brand_product']); 
   //brand_update
   Route::get('/ad/edit_brand_product/{brand_product_id}',[BrandProduct::class,'edit_brand_product']);
-  //xoa danh muc
+  //xoa thuong hieu
   Route::get('/ad/delete_brand_product/{brand_product_id}',[BrandProduct::class,'delete_brand_product']);
-  //save danh muc
+  //save thuong hieu
   Route::post('/ad/updateTH/{brand_product_id}',[BrandProduct::class,'update_brand_product']);
+  //Tim kiem thuong hieu
+  Route::post('/ad/timkiemBR',[BrandProduct::class,'searchBrand']);
 
 
 
@@ -100,3 +102,4 @@ Route::get('/shop/sp/{id?}',function(String $id) {
   Route::get('/ad/delete_product/{product_id}',[ProductController::class,'delete_product']);
   //save san pham
   Route::post('/ad/updateSP/{product_id}',[ProductController::class,'update_product']);
+  Route::post('/ad/timkiemSP',[ProductController::class,'search']);

@@ -18,12 +18,13 @@
         <div class="col-sm-4">
         </div>
         <div class="col-sm-3">
+          <form action="{{URL::to('/ad/timkiemSP')}}" method="post">
+            {{csrf_field()}}
           <div class="input-group">
-            <input type="text" class="input-sm form-control" placeholder="Search">
-            <span class="input-group-btn">
-              <button class="btn btn-sm btn-default" type="button">Go!</button>
-            </span>
+            <input type="text" name ="keywords_submit" class="input-sm form-control" placeholder="Search">
+            <input type="submit" name ="search_items" class="btn btn-info btn-sm" value="Tìm Kiếm" style="margin-bottom: -24px;">
           </div>
+          </form>
         </div>
       </div>
       <div class="table-responsive">
@@ -58,7 +59,7 @@ if($message){
               <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
               <td>{{$pro->product_name}}</td>
               <td>{{$pro->product_price}}</td>
-              <td><img src="{{$pro->product_image}}" alt="" width="100"></td>
+              <td><img src="/up/{{$pro->product_image}}" alt="" width="100"></td>
               <td>{{$pro->category_name}}</td>
               <td>{{$pro->brand_name}}</td>
               <td><span class="text-ellipsis">

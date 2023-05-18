@@ -183,7 +183,7 @@
 								<div class="clearfix"></div>
 							</div>
 							<div class="row">
-							@foreach($womenProducts as $womenProduct)
+							{{-- @foreach($womenProducts as $womenProduct)
 								<div class="col-sm-3">
 									<div class="single-item">
 										@if($womenProduct->discount != null)
@@ -213,7 +213,7 @@
 										</div>
 									</div>
 								</div>	
-								@endforeach							
+								@endforeach							 --}}
 							</div>
 						</div> <!-- .beta-products-list -->
 
@@ -226,7 +226,7 @@
 								<div class="clearfix"></div>
 							</div>
 							<div class="row">								
-							@foreach($menProducts as $menProduct)
+							{{-- @foreach($menProducts as $menProduct)
 								<div class="col-sm-3">
 									<div class="single-item">
 										@if($menProduct->discount != null)
@@ -256,7 +256,7 @@
 										</div>
 									</div>
 								</div>	
-								@endforeach							
+								@endforeach							 --}}
 								
 							</div>
 						</div> <!-- .beta-products-list -->

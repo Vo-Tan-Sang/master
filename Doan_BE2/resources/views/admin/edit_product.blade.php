@@ -13,7 +13,7 @@
                 echo $message;
                 Session::put('message',null);
             }
-            ?>              
+            ?>                        
                     <div class="position-center">
                         @foreach($edit_product as $key => $pro)
                         <form action="{{URL::to('/ad/updateSP/'.$pro->product_id)}}" method="post" enctype="mutipart/form-data">
@@ -28,6 +28,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Hình Ảnh Sản Phẩm</label>
+                            <br><img src="/up/{{$pro->product_image}}" alt="" width="100">
                             <input type="file" name="product_image" class="form-control" id="exampleInputEmail1">
                         </div>
                         <div class="form-group">
