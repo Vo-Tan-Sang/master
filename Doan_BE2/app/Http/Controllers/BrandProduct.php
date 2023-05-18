@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
-use Session;
-use DB;
+use Illuminate\Support\Facades\Session;
+
 session_start();
 
 class BrandProduct extends Controller
@@ -14,7 +15,7 @@ class BrandProduct extends Controller
         return view('admin.add_brand_product');
     }
     public function all_brand_product(){
-       $all_brand_product = DB::table('brand')->get();
+       $all_brand_product =DB::table('brand')->get();
        $manager_brand_product = view('admin.all_brand_product')->with('all_brand_product',$all_brand_product);
         return view('admin.index')->with('admin.all_brand_product',$manager_brand_product);
     }
