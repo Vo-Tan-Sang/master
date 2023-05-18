@@ -13,7 +13,7 @@
                 echo $message;
                 Session::put('message',null);
             }
-            ?>              
+            ?>                        
                     <div class="position-center">
                         @foreach($edit_product as $key => $pro)
                         <form action="{{URL::to('/ad/updateSP/'.$pro->product_id)}}" method="post" enctype="mutipart/form-data">

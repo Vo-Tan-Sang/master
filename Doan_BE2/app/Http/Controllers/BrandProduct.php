@@ -58,4 +58,10 @@ class BrandProduct extends Controller
         Session::put('message','Xóa Thương Hiệu Thành Công');
         return Redirect::to('/ad/all_brand_product');
     } 
+    public function searchBrand(Request $request){
+        $keywords = $request->keywords_submit; 
+
+        $search_brand = DB::table('brand')->where('brand_name','like','%'.$keywords.'%')->get();
+        return view('admin.all_search_brand')->with('search_brand',$search_brand);
+    }
 }

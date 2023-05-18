@@ -18,12 +18,13 @@
         <div class="col-sm-4">
         </div>
         <div class="col-sm-3">
+        <form action="{{URL::to('/ad/timkiemBR')}}" method="post">
+            {{csrf_field()}}
           <div class="input-group">
-            <input type="text" class="input-sm form-control" placeholder="Search">
-            <span class="input-group-btn">
-              <button class="btn btn-sm btn-default" type="button">Go!</button>
-            </span>
+            <input type="text" name ="keywords_submit" class="input-sm form-control" placeholder="Search">
+            <input type="submit" name ="search_items" class="btn btn-info btn-sm" value="Tìm Kiếm" style="margin-bottom: -24px;">
           </div>
+          </form>
         </div>
       </div>
       <div class="table-responsive">
@@ -70,7 +71,7 @@ if($message){
               <td>
                 <a href="{{URL::to('/ad/edit_brand_product/'.$cate_pro->brand_id)}}" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i></a>
                 <a onclick="return confirm('Bạn Có Chắc Muốn Xóa Thương Hiệu Này Hay Không?')" href="{{URL::to('/ad/delete_brand_product/'.$cate_pro->brand_id)}}" class="active" ui-toggle-class=""> <i class="fa fa-times text-danger text"></i></a>
-                
+               
               </td>
             </tr>     
             @endforeach   
