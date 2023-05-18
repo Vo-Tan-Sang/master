@@ -50,4 +50,19 @@ class AdminController extends Controller
         Session::put('admin_id',null);   
         return Redirect::to('/ad/login_admin');     
     }
+    public function all_admin(){
+        $all_admin = DB::table('admin')->get();
+        $manager_admin = view('admin.all_admin')->with('all_admin',$all_admin);
+        return view('admin.index')->with('admin.all_admin',$manager_admin);
+    }
+    public function delete_admin($id){
+        DB::table('admin')->where('id',$id)->delete();
+        Session::put('message','Xóa Người Quản Lý Thành Công');
+        return Redirect::to('/ad/all_admin');
+    } 
+    public function searchAdmin(Request $request){
+        $keywords = $request->keywords_submit; 
+        $search_admin = DB::table('admin')->where('admin_id','admin_name','admin_email'.$keywords.'admin_phone')->get();
+        return view('admin.all_search_admin')->with('search_admin',$search_admin);
+    }
 }

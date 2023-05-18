@@ -5,6 +5,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Front;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\BrandProduct;
 use Illuminate\Support\Facades\DB;
@@ -70,6 +71,13 @@ Route::get('/shop/sp/{id?}',function(String $id) {
  //save danh muc
  Route::post('/ad/updateDM/{category_product_id}',[CategoryProduct::class,'update_category_product']);
 
+  //Admin
+  Route::get('/ad/all_admin',[AdminController::class,'all_admin']);
+    //xoa admin
+    Route::get('/ad/delete_admin/{id}',[AdminController::class,'delete_admin']);
+    //Tim kiem admin
+    Route::post('/ad/timkiemAdmin',[AdminController::class,'searchAdmin']);
+
 
   //brand_product_them
   Route::get('/ad/add_brand_product',[BrandProduct::class,'add_brand_product']);
@@ -87,8 +95,6 @@ Route::get('/shop/sp/{id?}',function(String $id) {
   //Tim kiem thuong hieu
   Route::post('/ad/timkiemBR',[BrandProduct::class,'searchBrand']);
 
-
-
 //Product
   Route::get('/ad/add_product',[ProductController::class,'add_product']);
   Route::get('/ad/all_product',[ProductController::class,'all_product']);
@@ -103,3 +109,10 @@ Route::get('/shop/sp/{id?}',function(String $id) {
   //save san pham
   Route::post('/ad/updateSP/{product_id}',[ProductController::class,'update_product']);
   Route::post('/ad/timkiemSP',[ProductController::class,'search']);
+
+  //User
+  Route::get('/ad/all_user',[UserController::class,'all_user']);
+    //xoa user
+    Route::get('/ad/delete_user/{id}',[UserController::class,'delete_user']);
+    //Tim kiem user
+    Route::post('/ad/timkiemUser',[UserController::class,'searchUser']);
