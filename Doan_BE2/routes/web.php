@@ -109,7 +109,7 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
   Route::post('/ad/updateSP/{product_id}',[ProductController::class,'update_product']);
   Route::post('/ad/timkiemSP',[ProductController::class,'search']);
 
-<<<<<<< HEAD
+
 
   // login user :
   // Route::get('/login',[AuthManager::class,'login'])->name('login');
@@ -122,11 +122,11 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
 
   // view san phẩm theo DM :
   Route::get('/category/{brand_id}',[Front\HomeController::class,'category'])->name('category');
-=======
+
   //User
   Route::get('/ad/all_user',[UserController::class,'all_user']);
     //xoa user
     Route::get('/ad/delete_user/{id}',[UserController::class,'delete_user']);
     //Tim kiem user
     Route::post('/ad/timkiemUser',[UserController::class,'searchUser']);
->>>>>>> origin/main
+
