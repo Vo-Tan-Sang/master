@@ -87,8 +87,6 @@ Route::get('/shop/sp/{id?}',function(String $id) {
   //Tim kiem thuong hieu
   Route::post('/ad/timkiemBR',[BrandProduct::class,'searchBrand']);
 
-
-
 //Product
   Route::get('/ad/add_product',[ProductController::class,'add_product']);
   Route::get('/ad/all_product',[ProductController::class,'all_product']);
