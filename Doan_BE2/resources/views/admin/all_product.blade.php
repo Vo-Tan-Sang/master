@@ -43,7 +43,6 @@ if($message){
                   <input type="checkbox"><i></i>
                 </label>
               </th>
-              <th>ID</th>
               <th>Tên Sản Phẩm</th>
               <th>Giá</th>
               <th>Hình Ảnh</th>
@@ -57,8 +56,7 @@ if($message){
           <tbody>
             @foreach ($all_product as $key =>$pro)
             <tr>
-              <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-              <td>{{$pro->product_id}}</td>
+              <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>           
               <td>{{$pro->product_name}}</td>
               <td>{{$pro->product_price}}</td>
               <td><img src="/up/{{$pro->product_image}}" alt="" width="100"></td>
