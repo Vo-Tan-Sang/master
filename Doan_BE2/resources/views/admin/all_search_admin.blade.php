@@ -33,10 +33,7 @@
               <th>ID</th>
               <th>Tên Admin</th>
               <th>Email </th>
-<<<<<<< HEAD
-              
-=======
->>>>>>> origin/main
+
               <th>Phone</th>
               
               
@@ -50,11 +47,7 @@
               <td>{{$pro->admin_id}}</td>
               <td>{{$pro->admin_name}}</td>
               <td>{{$pro->admin_email}}</td>
-<<<<<<< HEAD
-              
-=======
 
->>>>>>> origin/main
               <td>{{$pro->admin_phone}}</td>
             </tr>     
             @endforeach   
