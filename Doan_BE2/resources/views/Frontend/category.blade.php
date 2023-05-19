@@ -110,7 +110,7 @@
 				<div class="visible-xs clearfix"></div>
 				<nav class="main-menu">
 					<ul class="l-inline ov">
-						<li><a href="index.html">Trang chủ</a></li>
+						<li><a href="\">Trang chủ</a></li>
 						<li><a href="#">Sản phẩm</a>
 							<ul class="sub-menu">
 							</ul>
@@ -150,11 +150,6 @@
 												<br>
 											</p>
 										</div>
-										{{-- <div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
-											<div class="clearfix"></div>
-										</div> --}}
 									</div>
 								</div>
 								@endforeach

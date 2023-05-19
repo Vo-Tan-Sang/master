@@ -33,7 +33,7 @@
               <th>ID</th>
               <th>Tên Người Dùng</th>
               <th>Email </th>
-              <th>Password</th>
+              
               
               
               <th style="width:30px;"></th>
@@ -46,7 +46,7 @@
               <td>{{$pro->id}}</td>
               <td>{{$pro->name}}</td>
               <td>{{$pro->email}}</td>
-              <td>{{$pro->password}}</td>
+              
             </tr>     
             @endforeach   
           </tbody>                   
