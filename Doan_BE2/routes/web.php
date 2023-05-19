@@ -10,7 +10,11 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\danhmucbaivietController;
 use App\Http\Controllers\BrandProduct;
+<<<<<<< HEAD
 use App\Http\Controllers\Front\HomeController;
+=======
+use App\Http\Controllers\BaivietController;
+>>>>>>> BranchAdmin
 use Illuminate\Support\Facades\DB;
 
 
@@ -150,3 +154,38 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
  //save danh muc bai viet
  Route::post('/ad/updateDMBV/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'update_danhmuc_baiviet']);
 
+ //Bài viết
+//Thêm bài viết
+Route::get('/ad/add_baiviet/{id}',function($id){
+  return view('admin.add_baiviet')->with('id',$id);
+});
+//Hiển thị tất cả bài viết
+Route::get('/ad/all_baiviet',[BaivietController::class,'all_baiviet']);
+Route::get('/ad/all_product_baiviet',function(){
+$all_product = DB::table('product')
+     ->join('product_categories','product_categories.category_id','=','product.category_id')
+     ->join('brand','brand.brand_id','=','product.brand_id')->orderby('product.product_id','desc')->get();
+     $manager_product = view('admin.all_product')->with('all_product',$all_product);
+return view('admin.all_product_baiviet',compact('all_product'));
+});
+//Lưu bài viết
+Route::post('/ad/save_baiviet/{id}',[BaivietController::class,'save_baiviet']);
+//Edit posts
+Route::get('/ad/edit_baiviet/{id}',[BaivietController::class,'edit_baiviet']);
+Route::post('/ad/updateBH/{id}',[BaivietController::class,'update_baiviet']);
+
+Route::get('/ad/delete_baiviet/{id}',[BaivietController::class,'delete_baiviet']);
+//Xem chi tiết bài viết
+Route::get('/ad/viewposts/{id}',[BaivietController::class,'show']);
+//Tìm kiếm
+Route::get('/ad/search',[BaivietController:: class, 'search']);
+//Liet ke bai viet
+Route::get('/ad/lietkebaivietSP/{id}',[BaivietController::class,'lietkePost_SP']);
+Route::get('/ad/lietkebaiviet_SP', function(){
+$all_product = DB::table('table_posts_baiviet')
+->join('product','product.product_id', '=','table_posts_baiviet.idsanpham')
+->join('product_categories','product_categories.category_id','=','product.category_id')
+->join('brand','brand.brand_id','=','product.brand_id')->distinct()
+->get();
+return view('admin.lietkebaivietSP',compact('all_product'));
+});
