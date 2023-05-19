@@ -12,7 +12,7 @@ session_start();
 class ProductController extends Controller
 {
     public function add_product(){
-        $cate_product = DB::table('product_ategories')->orderby('category_id','desc')->get();
+        $cate_product = DB::table('product_categories')->orderby('category_id','desc')->get();
         $brand_product = DB::table('brand')->orderby('brand_id','desc')->get();
         return view('admin.add_product')->with('cate_product',$cate_product)->with('brand_product',$brand_product);
         
