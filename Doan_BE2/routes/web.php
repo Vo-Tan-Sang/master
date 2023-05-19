@@ -8,6 +8,7 @@ use App\Http\Controllers\Front;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryProduct;
+use App\Http\Controllers\danhmucbaivietController;
 use App\Http\Controllers\BrandProduct;
 use App\Http\Controllers\Front\HomeController;
 use Illuminate\Support\Facades\DB;
@@ -133,4 +134,19 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
     Route::post('/search_product/',[Front\HomeController::class,'searchProduct']);
 
 
+
+
+  //danhmuc_baiviet_add
+ Route::get('/ad/add_danhmuc_baiviet',[danhmucbaivietController::class,'add_danhmuc_baiviet']);
+ Route::get('/ad/all_danhmuc_baiviet',[danhmucbaivietController::class,'all_danhmuc_baiviet']);
+ Route::post('/ad/saveDMBV',[danhmucbaivietController::class,'save_danhmuc_baiviet']);
+//danhmuc_all_tick_hien thi
+ Route::get('/ad/unactive-danhmuc-baiviet/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'unactive_danhmuc_baiviet']);
+ Route::get('/ad/active-danhmuc-baiviet/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'active_danhmuc_baiviet']); 
+ //danhmuc_update
+ Route::get('/ad/edit_danhmuc_baiviet/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'edit_danhmuc_baiviet']);
+ //xoa danh muc bai viet
+ Route::get('/ad/delete_danhmuc_baiviet/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'delete_danhmuc_baiviet']);
+ //save danh muc bai viet
+ Route::post('/ad/updateDMBV/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'update_danhmuc_baiviet']);
 

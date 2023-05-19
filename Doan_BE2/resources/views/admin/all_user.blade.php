@@ -46,7 +46,11 @@ if($message){
               <th>ID</th>
               <th>Tên Người Dùng</th>
               <th>Email</th>
+<<<<<<< HEAD
               
+=======
+              {{-- <th>Password</th>  --}}
+>>>>>>> origin/main
               
               <th style="width:30px;"></th>
             </tr>
@@ -58,7 +62,11 @@ if($message){
               <td>{{$pro->id}}</td>
               <td>{{$pro->name}}</td>
               <td>{{$pro->email}}</td>
+<<<<<<< HEAD
              
+=======
+              {{-- <td>{{$pro->password}}</td> --}}
+>>>>>>> origin/main
               <td><span class="text-ellipsis">
                 
               </span></td>

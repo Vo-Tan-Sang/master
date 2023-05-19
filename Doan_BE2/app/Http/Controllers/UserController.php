@@ -21,7 +21,7 @@ class UserController extends Controller
     } 
     public function searchUser(Request $request){
         $keywords = $request->keywords_submit; 
-        $search_user = DB::table('users')->where('id','name','email'.$keywords.'password')->get();
+        $search_user = DB::table('users')->where('name','like','%'.$keywords.'%')->get();
         return view('admin.all_search_user')->with('search_user',$search_user);
     }
 }
