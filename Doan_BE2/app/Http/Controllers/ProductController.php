@@ -119,11 +119,11 @@ class ProductController extends Controller
     } 
     public function search(Request $request){
         $keywords = $request->keywords_submit; 
-        $cate_product = DB::table('product_categories')->orderby('category_id','desc')->get();
-        $brand_product = DB::table('brand')->orderby('brand_id','desc')->get();
+        // $cate_product = DB::table('product_categories')->orderby('category_id','desc')->get();
+        // $brand_product = DB::table('brand')->orderby('brand_id','desc')->get();
 
         $search_product = DB::table('product')->where('product_name','like','%'.$keywords.'%')->get();
-        return view('admin.all_search_product')->with('cate_product',$cate_product)->with('brand_product',$brand_product)->with('search_product',$search_product);
+        return view('admin.all_search_product')->with('search_product',$search_product);
     }
 
 }
