@@ -18,12 +18,15 @@
         <div class="col-sm-4">
         </div>
         <div class="col-sm-3">
-          <div class="input-group">
-            <input type="text" class="input-sm form-control" placeholder="Search">
-            <span class="input-group-btn">
-              <button class="btn btn-sm btn-default" type="button">Go!</button>
-            </span>
-          </div>
+          
+            <form action="{{URL::to('/search_baiviet')}}" method="post">
+              {{csrf_field()}}
+            <div class="input-group">
+              <input type="text" name ="keywords_submit" class="input-sm form-control" placeholder="Search">
+              <input type="submit" name ="search_items" class="btn btn-info btn-sm" value="Tìm Kiếm" style="margin-bottom: -24px;">
+            </div>
+            </form>
+          
         </div>
       </div>
       <div class="table-responsive">

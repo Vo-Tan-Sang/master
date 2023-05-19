@@ -150,6 +150,7 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
  Route::get('/ad/delete_danhmuc_baiviet/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'delete_danhmuc_baiviet']);
  //save danh muc bai viet
  Route::post('/ad/updateDMBV/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'update_danhmuc_baiviet']);
+ Route::post('/search_baiviet',[danhmucbaivietController::class,'search_baiviet']);
 
  //Bài viết
 //Thêm bài viết
