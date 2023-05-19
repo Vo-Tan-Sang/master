@@ -24,4 +24,11 @@ class HomeController extends Controller
         $product = DB::table('product')->where('product_status','0')->orderby('brand_id','desc')->get();
         return view('Frontend.category')->with('category',$category)->with('category1',$category1);
     }
+    // show
+    public function searchProduct(Request $request){
+        $keywords = $request->keywords_submit; 
+        $category = DB::table('product_categories')->where('category_status',0)->orderBy('category_name','ASC')->get();
+        $search_product = DB::table('product')->where('product_name','like','%'.$keywords.'%')->get();
+        return view('Frontend.search_product')->with('search_product',$search_product)->with('category',$category);
+    }
 }
