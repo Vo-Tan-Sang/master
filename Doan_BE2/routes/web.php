@@ -10,11 +10,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\danhmucbaivietController;
 use App\Http\Controllers\BrandProduct;
-<<<<<<< HEAD
 use App\Http\Controllers\Front\HomeController;
-=======
 use App\Http\Controllers\BaivietController;
->>>>>>> BranchAdmin
 use Illuminate\Support\Facades\DB;
 
 
