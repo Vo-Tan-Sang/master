@@ -92,6 +92,24 @@ class ProductController extends Controller
         return view('admin.index')->with('admin.edit_product',$manager_product);
     } 
     public function update_product(Request $request,$product_id){
+        // if($request->has('product_image')){  
+        //     $file = $request->product_image;      
+        //     $new_image =$file->getClientOriginalName();
+        //     $data = array();
+        //     $data['product_name'] = $request->product_name;
+        //     $data['product_price'] = $request->product_price;  
+        //     $data['product_decs'] = $request->product_desc;
+        //     $data['product_content'] = $request->product_content;  
+        //     $data['category_id'] = $request->product_cate;      
+        //     $data['brand_id'] = $request->product_brand;  
+        //     $data['product_status'] = $request->product_status;   
+        //     $data['product_image'] = $new_image;  
+        //     $file->move(public_path('up'),$new_image);
+        //     $data['product_image'] = $new_image;         
+        //     DB::table('product')->where('product_id',$product_id)->update($data);
+        //     Session::put('message','Thêm sản phẩm thành công');
+        //     return Redirect::to('/ad/all_product');
+        //  }
         $data = array();
         $data['product_name'] = $request->product_name;
         $data['product_price'] = $request->product_price;  
@@ -106,7 +124,7 @@ class ProductController extends Controller
             $get_image->move('public/up',$new_image);
             $data['product_image'] = $new_image;         
             DB::table('product')->where('product_id',$product_id)->update($data);
-            Session::put('message','Update sản phẩm thành công');
+            Session::put('message','Update sản phẩm thành công');   
             return Redirect::to('/ad/all_product');
         }       
         DB::table('product')->where('product_id',$product_id)->update($data);
