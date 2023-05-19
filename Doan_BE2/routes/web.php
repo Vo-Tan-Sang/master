@@ -3,11 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\Front;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\BrandProduct;
+use App\Http\Controllers\Front\HomeController;
 use Illuminate\Support\Facades\DB;
 
 
@@ -109,16 +111,12 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
   Route::post('/ad/updateSP/{product_id}',[ProductController::class,'update_product']);
   Route::post('/ad/timkiemSP',[ProductController::class,'search']);
 
-
-
   // login user :
-  // Route::get('/login',[AuthManager::class,'login'])->name('login');
-  // Route::post('/login',[AuthManager::class,'loginPost'])->name('login.post');
-  // Route::get('/registration',[AuthManager::class,'registration'])->name('registration');
-  // Route::post('/registration',[AuthManager::class,'registrationPost'])->name('registration.post');
-  // Route::get('/logout',[AuthManager::class,'logout'])->name('logout');
-
-  //Route::get('/product/{brand_id}',[Front\HomeController::class,'viewDM']);
+  Route::get('/login',[AuthManager::class,'login'])->name('login');
+  Route::post('/login',[AuthManager::class,'loginPost'])->name('login.post');
+  Route::get('/registration',[AuthManager::class,'registration'])->name('registration');
+  Route::post('/registration',[AuthManager::class,'registrationPost'])->name('registration.post');
+  Route::get('/logout',[AuthManager::class,'logout'])->name('logout');
 
   // view san phẩm theo DM :
   Route::get('/category/{brand_id}',[Front\HomeController::class,'category'])->name('category');
@@ -129,4 +127,10 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
     Route::get('/ad/delete_user/{id}',[UserController::class,'delete_user']);
     //Tim kiem user
     Route::post('/ad/timkiemUser',[UserController::class,'searchUser']);
+    Route::get('/showproduct/{id}',[Front\HomeController::class,'show']);
+
+    //Tim kiem san pham trang chu
+    Route::post('/search_product/',[Front\HomeController::class,'searchProduct']);
+
+
 
