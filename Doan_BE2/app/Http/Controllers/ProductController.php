@@ -18,6 +18,7 @@ class ProductController extends Controller
         
     }
     public function all_product(){
+     //   $product = DB::table('product')->orderby('product_id','desc')->paginate(5);
        $all_product = DB::table('product')
        ->join('product_categories','product_categories.category_id','=','product.category_id')
        ->join('brand','brand.brand_id','=','product.brand_id')->orderby('product.product_id','desc')->get();
