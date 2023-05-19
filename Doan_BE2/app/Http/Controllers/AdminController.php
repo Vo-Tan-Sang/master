@@ -62,7 +62,7 @@ class AdminController extends Controller
     } 
     public function searchAdmin(Request $request){
         $keywords = $request->keywords_submit; 
-        $search_admin = DB::table('admin')->where('admin_id','admin_name','admin_email'.$keywords.'admin_phone')->get();
+        $search_admin = DB::table('admin')->where('admin_name','like','%'.$keywords.'%')->get();
         return view('admin.all_search_admin')->with('search_admin',$search_admin);
     }
 }

@@ -46,8 +46,9 @@ if($message){
               <th>ID</th>
               <th>TênAdmin</th>
               <th>Email</th>
-
               <th>Phone</th>
+
+
               <th style="width:30px;"></th>
             </tr>
           </thead>
@@ -58,8 +59,8 @@ if($message){
               <td>{{$pro->admin_id}}</td>
               <td>{{$pro->admin_name}}</td>
               <td>{{$pro->admin_email}}</td>
-
               <td>{{$pro->admin_phone}}</td>
+             
               <td><span class="text-ellipsis">
                 
               </span></td>

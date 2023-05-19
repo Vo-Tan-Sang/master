@@ -33,7 +33,6 @@
               <th>ID</th>
               <th>Tên Admin</th>
               <th>Email </th>
-              <th>Password</th>
               <th>Phone</th>
               
               
@@ -47,7 +46,7 @@
               <td>{{$pro->admin_id}}</td>
               <td>{{$pro->admin_name}}</td>
               <td>{{$pro->admin_email}}</td>
-              <td>{{$pro->admin_password}}</td>
+
               <td>{{$pro->admin_phone}}</td>
             </tr>     
             @endforeach   
