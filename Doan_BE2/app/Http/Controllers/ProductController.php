@@ -18,10 +18,10 @@ class ProductController extends Controller
         
     }
     public function all_product(){
-     //   $product = DB::table('product')->orderby('product_id','desc')->paginate(5);
+       //$product = DB::table('product')->paginate(5);
        $all_product = DB::table('product')
-       ->join('product_categories','product_categories.category_id','=','product.category_id')
-        ->join('brand','brand.brand_id','=','product.brand_id')->orderby('product.product_id','desc')->get();
+        ->join('product_categories','product_categories.category_id','=','product.category_id')
+        ->join('brand','brand.brand_id','=','product.brand_id')->orderby('product.product_id','desc')->paginate(5);
        $manager_product = view('admin.all_product')->with('all_product',$all_product);
         return view('admin.index')->with('admin.all_product',$manager_product);
     }
