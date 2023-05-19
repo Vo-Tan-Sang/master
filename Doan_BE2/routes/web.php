@@ -132,7 +132,7 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
     Route::get('/showproduct/{id}',[Front\HomeController::class,'show']);
 
     //Tim kiem san pham trang chu
-    Route::post('/search_product/',[Front\HomeController::class,'searchProduct']);
+    Route::post('/search_product',[Front\HomeController::class,'searchProduct']);
 
 
 
