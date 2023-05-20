@@ -43,7 +43,7 @@ if($message){
                   <input type="checkbox"><i></i>
                 </label>
               </th>
-              <th>Tên Sản Phẩm</th>
+              <th>Tên Sản Phẩm </th>
               <th>Giá</th>
               <th>Hình Ảnh</th>
               <th>Danh Mục</th>
