@@ -37,4 +37,5 @@ class HomeController extends Controller
         $search_product = DB::table('product')->where('product_name','like','%'.$keywords.'%')->get();
         return view('Frontend.search_product')->with('search_product',$search_product)->with('category',$category);
     }
+    
 }

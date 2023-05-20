@@ -33,8 +33,8 @@
               <th>Tên Sản Phẩm</th>
               <th>Giá</th>
               <th>Hình Ảnh</th>
-              {{-- <th>Danh Mục</th>
-              <th>Thương Hiệu</th> --}}
+              <th>Danh Mục</th>
+              <th>Thương Hiệu</th>
               
               <th style="width:30px;"></th>
             </tr>
@@ -46,8 +46,8 @@
               <td>{{$pro->product_name}}</td>
               <td>{{$pro->product_price}}</td>
               <td><img src="/up/{{$pro->product_image}}" alt="" width="100"></td>
-              {{-- <td>{{$pro->category_name}}</td>
-              <td>{{$pro->brand_name}}</td>            --}}
+              <td>{{$pro->category_name}}</td>
+              <td>{{$pro->brand_name}}</td>           
             </tr>     
             @endforeach   
           </tbody>                   
