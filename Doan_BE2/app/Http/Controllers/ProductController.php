@@ -128,7 +128,7 @@ class ProductController extends Controller
             return Redirect::to('/ad/all_product');
         }       
         DB::table('product')->where('product_id',$product_id)->update($data);
-          Session::put('message','Update sản phẩm thành công');
+        Session::put('message','Update sản phẩm thành công');
          return Redirect::to('/ad/all_product');
     }
     public function delete_product($product_id){
