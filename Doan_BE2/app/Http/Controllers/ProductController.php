@@ -21,7 +21,7 @@ class ProductController extends Controller
        //$product = DB::table('product')->paginate(5);
        $all_product = DB::table('product')
         ->join('product_categories','product_categories.category_id','=','product.category_id')
-        ->join('brand','brand.brand_id','=','product.brand_id')->orderby('product.product_id','desc')->paginate(5);
+        ->join('brand','brand.brand_id','=','product.brand_id')->orderby('product.product_id','desc')->paginate(3);
        $manager_product = view('admin.all_product')->with('all_product',$all_product);
         return view('admin.index')->with('admin.all_product',$manager_product);
     }
@@ -93,7 +93,9 @@ class ProductController extends Controller
     } 
     public function update_product(Request $request,$product_id){
         if($request->has('product_image')){  
-            $file = $request->product_image;      
+            // print_r($request->product_image);
+            $file = $request->product_image; 
+
             $new_image =$file->getClientOriginalName();
             $data = array();
             $data['product_name'] = $request->product_name;
@@ -141,7 +143,13 @@ class ProductController extends Controller
         // $cate_product = DB::table('product_categories')->orderby('category_id','desc')->get();
         // $brand_product = DB::table('brand')->orderby('brand_id','desc')->get();
 
-        $search_product = DB::table('product')->where('product_name','like','%'.$keywords.'%')->get();
+        $search_product = DB::table('product')
+        ->join('product_categories','product_categories.category_id','=','product.category_id')
+        ->join('brand','brand.brand_id','=','product.brand_id')
+        ->where('product.product_name','like','%'.$keywords.'%')
+        ->orwhere('brand.brand_name','like','%'.$keywords.'%')
+        ->orwhere('product_categories.category_name','like','%'.$keywords.'%')
+        ->get();
         return view('admin.all_search_product')->with('search_product',$search_product);
     }
 
