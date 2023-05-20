@@ -56,8 +56,13 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
 //backend
 //Route::get('/admin',[AdminController::class,'index']);
  Route::get('/ad/login_admin',[AdminController::class,'index']);
+
+
  //trang chu 
- Route::get('/ad/dashboard',[AdminController::class,'show']); 
+ //Route::get('/ad/dashboard',[AdminController::class,'show']); 
+
+
+ 
  Route::post('/ad/admin-dashboard',[AdminController::class,'dashboard']);
  Route::get('/ad/logout',[AdminController::class,'logout']);
  //category_product_them
