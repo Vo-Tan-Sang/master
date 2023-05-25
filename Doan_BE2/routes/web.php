@@ -8,8 +8,10 @@ use App\Http\Controllers\Front;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryProduct;
+use App\Http\Controllers\danhmucbaivietController;
 use App\Http\Controllers\BrandProduct;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\BaivietController;
 use Illuminate\Support\Facades\DB;
 
 
@@ -54,8 +56,13 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
 //backend
 //Route::get('/admin',[AdminController::class,'index']);
  Route::get('/ad/login_admin',[AdminController::class,'index']);
+
+
  //trang chu 
- Route::get('/ad/dashboard',[AdminController::class,'show']); 
+ //Route::get('/ad/dashboard',[AdminController::class,'show']); 
+
+
+ 
  Route::post('/ad/admin-dashboard',[AdminController::class,'dashboard']);
  Route::get('/ad/logout',[AdminController::class,'logout']);
  //category_product_them
@@ -130,7 +137,67 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
     Route::get('/showproduct/{id}',[Front\HomeController::class,'show']);
 
     //Tim kiem san pham trang chu
-    Route::post('/search_product/',[Front\HomeController::class,'searchProduct']);
+    Route::post('/search_product',[Front\HomeController::class,'searchProduct']);
 
 
 
+
+  //danhmuc_baiviet_add
+ Route::get('/ad/add_danhmuc_baiviet',[danhmucbaivietController::class,'add_danhmuc_baiviet']);
+ Route::get('/ad/all_danhmuc_baiviet',[danhmucbaivietController::class,'all_danhmuc_baiviet']);
+ Route::post('/ad/saveDMBV',[danhmucbaivietController::class,'save_danhmuc_baiviet']);
+//danhmuc_all_tick_hien thi
+ Route::get('/ad/unactive-danhmuc-baiviet/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'unactive_danhmuc_baiviet']);
+ Route::get('/ad/active-danhmuc-baiviet/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'active_danhmuc_baiviet']); 
+ //danhmuc_update
+ Route::get('/ad/edit_danhmuc_baiviet/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'edit_danhmuc_baiviet']);
+ //xoa danh muc bai viet
+ Route::get('/ad/delete_danhmuc_baiviet/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'delete_danhmuc_baiviet']);
+ //save danh muc bai viet
+ Route::post('/ad/updateDMBV/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'update_danhmuc_baiviet']);
+ Route::post('/search_baiviet',[danhmucbaivietController::class,'search_baiviet']);
+
+ //Bài viết
+//Thêm bài viết
+Route::get('/ad/add_baiviet/{id}',function($id){
+  return view('admin.add_baiviet')->with('id',$id);
+});
+//Hiển thị tất cả bài viết
+Route::get('/ad/all_baiviet',[BaivietController::class,'all_baiviet']);
+Route::get('/ad/all_product_baiviet',function(){
+$all_product = DB::table('product')
+     ->join('product_categories','product_categories.category_id','=','product.category_id')
+     ->join('brand','brand.brand_id','=','product.brand_id')->orderby('product.product_id','desc')->get();
+     $manager_product = view('admin.all_product')->with('all_product',$all_product);
+return view('admin.all_product_baiviet',compact('all_product'));
+});
+//Lưu bài viết
+Route::post('/ad/save_baiviet/{id}',[BaivietController::class,'save_baiviet']);
+//Edit posts
+Route::get('/ad/edit_baiviet/{id}',[BaivietController::class,'edit_baiviet']);
+Route::post('/ad/updateBH/{id}',[BaivietController::class,'update_baiviet']);
+
+Route::get('/ad/delete_baiviet/{id}',[BaivietController::class,'delete_baiviet']);
+//Xem chi tiết bài viết
+Route::get('/ad/viewposts/{id}',[BaivietController::class,'show']);
+//Tìm kiếm
+Route::get('/ad/search',[BaivietController:: class, 'search']);
+//Liet ke bai viet
+Route::get('/ad/lietkebaivietSP/{id}',[BaivietController::class,'lietkePost_SP']);
+Route::get('/ad/lietkebaiviet_SP', function(){
+$all_product = DB::table('table_posts_baiviet')
+->join('product','product.product_id', '=','table_posts_baiviet.idsanpham')
+->join('product_categories','product_categories.category_id','=','product.category_id')
+->join('brand','brand.brand_id','=','product.brand_id')->distinct()
+->get();
+return view('admin.lietkebaivietSP',compact('all_product'));
+});
+
+
+
+
+
+
+Route::get('/ad/dathang',function(){
+  return view('Frontend.shop.dathang');
+});

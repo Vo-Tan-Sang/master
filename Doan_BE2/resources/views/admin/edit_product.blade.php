@@ -16,8 +16,8 @@
             ?>                        
                     <div class="position-center">
                         @foreach($edit_product as $key => $pro)
-                        <form action="{{URL::to('/ad/updateSP/'.$pro->product_id)}}" method="post" enctype="mutipart/form-data">
-                            {{csrf_field()}}
+                        <form action="/ad/updateSP/{{$pro->product_id}}" method="post" enctype="multipart/form-data">
+                           @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên Sản Phẩm</label>
                             <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" value ="{{$pro->product_name}}">

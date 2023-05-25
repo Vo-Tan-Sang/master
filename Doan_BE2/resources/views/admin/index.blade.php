@@ -90,7 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="active" href="{{URL::to('/ad/dashboard')}}">
+                    <a class="active" href="{{URL::to('/')}}">
                         <i class="fa fa-dashboard"></i>
                         <span>Tổng Quan</span>
                     </a>
@@ -125,6 +125,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="{{URL::to('/ad/all_product')}}">Liệt Kê Sản Phẩm</a></li>                        
                     </ul>
                 </li>
+                <li class="sub-menu">
+                            <a href="javascript:;">
+                                <i class="fa fa-glass"></i>
+                                <span>Bài Viết</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="/ad/all_product_baiviet">Thêm Bài Viết</a></li>
+                                <li><a href="/ad/lietkebaiviet_SP">Liệt Kê Bài Viết</a></li>
+                            </ul>
+                        </li>
 				<li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-glass"></i>
@@ -141,6 +151,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </a>
                     <ul class="sub">
 						<li><a href="{{URL::to('/ad/all_admin')}}">Liệt Kê Danh Sách Admin</a></li>                        
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-glass"></i>
+                        <span>Danh Mục Bài Viết</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{URL::to('/ad/add_danhmuc_baiviet')}}">Thêm Danh Mục Bài Viết</a></li>
+						<li><a href="{{URL::to('/ad/all_danhmuc_baiviet')}}">Liệt Kê Danh Mục Bài Viết</a></li>                        
                     </ul>
                 </li>
             </ul>

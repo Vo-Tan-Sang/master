@@ -47,7 +47,6 @@ if($message){
               <th>Tên Người Dùng</th>
               <th>Email</th>
               
-              
               <th style="width:30px;"></th>
             </tr>
           </thead>
@@ -58,7 +57,7 @@ if($message){
               <td>{{$pro->id}}</td>
               <td>{{$pro->name}}</td>
               <td>{{$pro->email}}</td>
-             
+
               <td><span class="text-ellipsis">
                 
               </span></td>
