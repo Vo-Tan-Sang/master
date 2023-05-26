@@ -95,6 +95,6 @@ class BaivietController extends Controller
         ->join('product_categories','product_categories.category_id','=','product.category_id')
         ->join('brand','brand.brand_id','=','product.brand_id')
         ->where('product.product_id', '=', $id)->get();
-        return view('admin.index_posts', compact('data1'));
+        return view('Frontend.shop.index_posts', compact('data1'));
     }
 }
