@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
     <base href="{{asset('/')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,6 @@
     <link rel="stylesheet" title="style" href="front/css/style.css">
     <link rel="stylesheet" href="front/css/animate.css">
     <link rel="stylesheet" title="style" href="front/css/huong-style.css">
-=======
 	<base href="{{asset('/')}}">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,45 +30,10 @@
 	<link rel="stylesheet" title="style" href="front/css/style.css">
 	<link rel="stylesheet" href="front/css/animate.css">
 	<link rel="stylesheet" title="style" href="front/css/huong-style.css">
->>>>>>> BranchUser
 </head>
 
 <body>
 
-<<<<<<< HEAD
-    <div id="header">
-        <div class="header-top">
-            <div class="container">
-                <div class="pull-left auto-width-left">
-                    <ul class="top-menu menu-beta l-inline">
-                        <li><a href=""><i class="fa fa-home"></i> 90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
-                        <li><a href=""><i class="fa fa-phone"></i> 0163 296 7751</a></li>
-                    </ul>
-                </div>
-                <div class="pull-right auto-width-right">
-                    <ul class="top-details menu-beta l-inline">
-
-                        <li><a href="#">Đăng kí</a></li>
-                        <li><a href="#">Đăng nhập</a></li>
-                    </ul>
-                </div>
-                <div class="clearfix"></div>
-            </div> <!-- .container -->
-        </div> <!-- .header-top -->
-        <div class="header-body">
-            <div class="container beta-relative">
-                <div class="pull-left">
-                    <a href="index.html" id="logo"><img src="front/img/logolevent.png" width="100px" alt=""></a>
-                </div>
-                <div class="pull-right beta-components space-left ov">
-                    <div class="space10">&nbsp;</div>
-                    <div class="beta-comp">
-                        <form role="search" method="get" id="searchform" action="/">
-                            <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
-                            <button class="fa fa-search" type="submit" id="searchsubmit"></button>
-                        </form>
-                    </div>
-=======
 	<div id="header">
 		<div class="header-top">
 			<div class="container">
@@ -110,7 +73,6 @@
 						  </div>
 						  </form>
 					</div>
->>>>>>> BranchUser
 
                     <div class="beta-comp">
                         <div class="cart">
@@ -158,7 +120,7 @@
                                             class="cart-total-value">$34.55</span></div>
                                     <div class="clearfix"></div>
 
-<<<<<<< HEAD
+
                                     <div class="center">
                                         <div class="space10">&nbsp;</div>
                                         <a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i
@@ -192,7 +154,6 @@
             </div> <!-- .container -->
         </div> <!-- .header-bottom -->
     </div> <!-- #header -->
-=======
 									<div class="center">
 										<div class="space10">&nbsp;</div>
 										<a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
@@ -227,7 +188,7 @@
 			</div> <!-- .container -->
 		</div> <!-- .header-bottom -->
 	</div> <!-- #header -->
->>>>>>> BranchUser
+
 
     <div class="container">
         <div id="content" class="space-top-none">

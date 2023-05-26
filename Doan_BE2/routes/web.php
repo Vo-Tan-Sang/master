@@ -206,10 +206,7 @@ Route::get('/ad/Post_SP', function(){
 Route::get('/ad/dathang',function(){
   return view('Frontend.shop.dathang');
 });
-<<<<<<< HEAD
 //cart
 Route::post('/shopping-cart/{id}',[CartController::class,'shoppingCart']);
-=======
-
 Route::get('/user/{id}',[Front\HomeController::class,'showUser']);
->>>>>>> BranchUser
+
