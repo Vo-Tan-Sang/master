@@ -183,7 +183,7 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="beta-products-list">
-							<h4>New Products</h4>						
+							<h4>Products</h4>						
 														
 							<div class="row">
 								@foreach ($search_product as $key =>$items)

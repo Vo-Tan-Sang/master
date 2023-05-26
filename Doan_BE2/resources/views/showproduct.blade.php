@@ -16,42 +16,50 @@
     <link rel="stylesheet" title="style" href="front/css/style.css">
     <link rel="stylesheet" href="front/css/animate.css">
     <link rel="stylesheet" title="style" href="front/css/huong-style.css">
+	
 </head>
 
 <body>
 
-    <div id="header">
-        <div class="header-top">
-            <div class="container">
-                <div class="pull-left auto-width-left">
-                    <ul class="top-menu menu-beta l-inline">
-                        <li><a href=""><i class="fa fa-home"></i> 90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
-                        <li><a href=""><i class="fa fa-phone"></i> 0163 296 7751</a></li>
-                    </ul>
-                </div>
-                <div class="pull-right auto-width-right">
-                    <ul class="top-details menu-beta l-inline">
-
-                        <li><a href="#">Đăng kí</a></li>
-                        <li><a href="#">Đăng nhập</a></li>
-                    </ul>
-                </div>
-                <div class="clearfix"></div>
-            </div> <!-- .container -->
-        </div> <!-- .header-top -->
-        <div class="header-body">
-            <div class="container beta-relative">
-                <div class="pull-left">
-                    <a href="index.html" id="logo"><img src="front/img/logolevent.png" width="100px" alt=""></a>
-                </div>
-                <div class="pull-right beta-components space-left ov">
-                    <div class="space10">&nbsp;</div>
-                    <div class="beta-comp">
-                        <form role="search" method="get" id="searchform" action="/">
-                            <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
-                            <button class="fa fa-search" type="submit" id="searchsubmit"></button>
-                        </form>
-                    </div>
+	<div id="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="pull-left auto-width-left">
+					<ul class="top-menu menu-beta l-inline">
+						<li><a href=""><i class="fa fa-home"></i> 90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
+						<li><a href=""><i class="fa fa-phone"></i> 0163 296 7751</a></li>
+					</ul>
+				</div>
+				<div class="pull-right auto-width-right">
+					<ul class="top-details menu-beta l-inline">
+                        @auth
+						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{auth()->user()->name}}</a></li>
+						<li><a href="{{route('logout')}}">Logout</a></li>				
+						@else
+						<li><a href="{{route('registration')}}">Đăng kí</a></li>
+						<li><a href="{{route('login')}}">Đăng nhập</a></li>						
+						@endauth
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div> <!-- .container -->
+		</div> <!-- .header-top -->
+		<div class="header-body">
+			<div class="container beta-relative">
+				<div class="pull-left">
+					<a href="index.html" id="logo"><img src="front/img/logolevent.png" width="100px" alt=""></a>
+				</div>
+				<div class="pull-right beta-components space-left ov">
+					<div class="space10">&nbsp;</div>
+					<div class="beta-comp">
+						<form action="{{URL::to('/search_product')}}" method="post">
+							{{csrf_field()}}
+						  <div class="input-group">
+								<input type="text" name ="keywords_submit" class="input-sm form-control" placeholder="Search" style="margin-left: -76px" >
+							    <input type="submit" name ="search_items" class="btn btn-info btn-sm" value="Tìm Kiếm" style="padding: 9px" >
+						  </div>
+						  </form>
+					</div>
 
                     <div class="beta-comp">
                         <div class="cart">
@@ -99,6 +107,7 @@
                                             class="cart-total-value">$34.55</span></div>
                                     <div class="clearfix"></div>
 
+
                                     <div class="center">
                                         <div class="space10">&nbsp;</div>
                                         <a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i
@@ -111,27 +120,40 @@
                 </div>
                 <div class="clearfix"></div>
             </div> <!-- .container -->
-        </div> <!-- .header-body -->
-        <div class="header-bottom" style="background-color: #0277b8;">
-            <div class="container">
-                <a class="visible-xs beta-menu-toggle pull-right" href="#"><span
-                        class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
-                <div class="visible-xs clearfix"></div>
-                <nav class="main-menu">
-                    <ul class="l-inline ov">
-                        <li><a href="/">Trang chủ</a></li>
-                        <li><a href="#">Sản phẩm</a>
-                            <ul class="sub-menu">
-                            </ul>
-                        </li>
-                        <li><a href="about.html">Giới thiệu</a></li>
-                        <li><a href="/ad/Post_SP">Bài Viết</a></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </nav>
-            </div> <!-- .container -->
-        </div> <!-- .header-bottom -->
+        </div> <!-- .header-body -->      
     </div> <!-- #header -->
+								
+								</div>
+							</div>
+						</div> <!-- .cart -->
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div> <!-- .container -->
+		</div> <!-- .header-body -->
+		<div class="header-bottom" style="background-color: #0277b8;">
+			<div class="container">
+				<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
+				<div class="visible-xs clearfix"></div>
+				<nav class="main-menu">
+					<ul class="l-inline ov">
+						<li><a href="/">Trang chủ</a></li>
+						<li><a href="#">Sản phẩm</a>
+							<ul class="sub-menu">
+								@foreach ($category as $item)
+									<li><a href="{{route('category',['brand_id' =>$item->category_id])}}">{{$item->category_name}}</a></li>
+								@endforeach
+							</ul>
+						</li>
+						<li><a href="about.html">Giới thiệu</a></li>
+						<li><a href="contacts.html">Liên hệ</a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</nav>
+			</div> <!-- .container -->
+		</div> <!-- .header-bottom -->
+	</div> <!-- #header -->
+
 
     <div class="container">
         <div id="content" class="space-top-none">
