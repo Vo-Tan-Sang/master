@@ -89,4 +89,12 @@ class BaivietController extends Controller
         //     echo $value->id;
         // }   
     }
+    public function Post_SP($id){
+        $data = DB::table('table_posts_baiviet') 
+        ->join('product','product.product_id', '=','table_posts_baiviet.idsanpham')
+        ->join('product_categories','product_categories.category_id','=','product.category_id')
+        ->join('brand','brand.brand_id','=','product.brand_id')
+        ->where('product.product_id', '=', $id)->get();
+        return view('Frontend.shop.index_posts', compact('data1'));
+    }
 }

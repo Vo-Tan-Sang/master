@@ -12,6 +12,7 @@ use App\Http\Controllers\danhmucbaivietController;
 use App\Http\Controllers\BrandProduct;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\BaivietController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\DB;
 
 
@@ -56,8 +57,13 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
 //backend
 //Route::get('/admin',[AdminController::class,'index']);
  Route::get('/ad/login_admin',[AdminController::class,'index']);
+
+
  //trang chu 
- Route::get('/ad/dashboard',[AdminController::class,'show']); 
+ //Route::get('/ad/dashboard',[AdminController::class,'show']); 
+
+
+ 
  Route::post('/ad/admin-dashboard',[AdminController::class,'dashboard']);
  Route::get('/ad/logout',[AdminController::class,'logout']);
  //category_product_them
@@ -132,7 +138,7 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
     Route::get('/showproduct/{id}',[Front\HomeController::class,'show']);
 
     //Tim kiem san pham trang chu
-    Route::post('/search_product/',[Front\HomeController::class,'searchProduct']);
+    Route::post('/search_product',[Front\HomeController::class,'searchProduct']);
 
 
 
@@ -150,6 +156,7 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
  Route::get('/ad/delete_danhmuc_baiviet/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'delete_danhmuc_baiviet']);
  //save danh muc bai viet
  Route::post('/ad/updateDMBV/{danhmuc_baiviet_id}',[danhmucbaivietController::class,'update_danhmuc_baiviet']);
+ Route::post('/search_baiviet',[danhmucbaivietController::class,'search_baiviet']);
 
  //Bài viết
 //Thêm bài viết
@@ -186,3 +193,23 @@ $all_product = DB::table('table_posts_baiviet')
 ->get();
 return view('admin.lietkebaivietSP',compact('all_product'));
 });
+Route::get('/ad/postsSP/{id}',[BaivietController::class,'Post_SP']);
+Route::get('/ad/Post_SP', function(){
+  $all_product = DB::table('table_posts_baiviet')
+  ->join('product','product.product_id', '=','table_posts_baiviet.idsanpham')
+  ->join('product_categories','product_categories.category_id','=','product.category_id')
+  ->join('brand','brand.brand_id','=','product.brand_id')->distinct()
+  ->get();
+  return view('Frontend.shop.index_posts',compact('all_product'));
+});
+
+
+
+
+
+
+Route::get('/ad/dathang',function(){
+  return view('Frontend.shop.dathang');
+});
+//cart
+Route::post('/shopping-cart/{id}',[CartController::class,'shoppingCart']);

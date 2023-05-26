@@ -59,4 +59,10 @@ public function delete_danhmuc_baiviet($danhmuc_baiviet_id){
         Session::put('message','Xóa Danh Mục Thành Công');
         return Redirect::to('/ad/all_danhmuc_baiviet');
     }
+    public function search_baiviet(Request $request){
+        $keywords = $request->keywords_submit; 
+
+        $search_baiviet = DB::table('danhmucbaiviet')->where('danhmuc_name','like','%'.$keywords.'%')->get();
+        return view('admin.all_search_dmbaiviet')->with('search_baiviet',$search_baiviet);
+    }
 }

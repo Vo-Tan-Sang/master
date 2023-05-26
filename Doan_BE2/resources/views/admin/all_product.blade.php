@@ -22,7 +22,7 @@
             {{csrf_field()}}
           <div class="input-group">
             <input type="text" name ="keywords_submit" class="input-sm form-control" placeholder="Search">
-            <input type="submit" name ="search_items" class="btn btn-info btn-sm" value="Tìm Kiếm" style="margin-bottom: -24px;">
+            <input type="submit" name ="search_items" class="btn btn-info btn-sm" value="Tìm Kiếm" style="margin-top: -61px;margin-left: -72px;">
           </div>
           </form>
         </div>
@@ -43,7 +43,7 @@ if($message){
                   <input type="checkbox"><i></i>
                 </label>
               </th>
-              <th>Tên Sản Phẩm</th>
+              <th>Tên Sản Phẩm </th>
               <th>Giá</th>
               <th>Hình Ảnh</th>
               <th>Danh Mục</th>
@@ -85,18 +85,13 @@ if($message){
             @endforeach   
           </tbody>                   
         </table>
-        {{-- //{{$product->links() }} --}}
+       
       </div>
-      <footer class="panel-footer">
+      <footer class="panel-footer"> 
         <div class="row">        
           <div class="col-sm-7 text-right text-center-xs">                
             <ul class="pagination pagination-sm m-t-none m-b-none">
-              <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-              <li><a href="">1</a></li>
-              <li><a href="">2</a></li>
-              <li><a href="">3</a></li>
-              <li><a href="">4</a></li>
-              <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+              {{$all_product->links('pagination::bootstrap-4')}}
             </ul>
           </div>
         </div>
