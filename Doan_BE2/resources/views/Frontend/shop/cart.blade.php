@@ -137,13 +137,9 @@
 	<div class="inner-header">
 		<div class="container">
 			<div class="pull-left">
-				<h6 class="inner-title">Shopping Cart</h6>
+				<h6 class="inner-title"><b>Shopping Cart</b></h6>
 			</div>
-			<div class="pull-right">
-				<div class="beta-breadcrumb font-large">
-					<a href="index.html">Home</a> / <span>Shopping Cart</span>
-				</div>
-			</div>
+			
 			<div class="clearfix"></div>
 		</div>
 	</div>
@@ -152,63 +148,50 @@
 		<div id="content">
 			
 			<div class="table-responsive">
-				<?php
-				$items = Cart::getContent();
-					?>
+				
 				<!-- Shop Products Table -->
 				<table class="shop_table beta-shopping-cart-table" cellspacing="0">
 					<thead>
-						<tr><th class="product-img">Hình Ảnh</th>
-							<th class="product-name">Mô Tả Sản Phẩm</th>
-							<th class="product-price">Giá Cả</th>
-							<th class="product-status">Trạng Thái</th>
-							<th class="product-quantity">Số Lượng</th>
-							<th class="product-subtotal">Tổng Tiền</th>
+						<tr>
+							<th class="product-name">Tên Sản Phẩm</th>
+							<th class="product-price">Giá</th>							
+							<th class="product-quantity">Số Lượng</th>							
 							<th class="product-remove">Xóa Sản Phẩm</th>
+							<th class="product-remove">Mua Hàng</th>
 							
 						</tr>
 					</thead>
 					<tbody>
-						{{-- @foreach($items as $row) { --}}
-						<tr class="cart_item">
-							<td>
-								<img src="" alt="">
-							</td>
+					 @foreach($cart_product as $key =>$row)
+						<tr class="cart_item" style="background: rgb(222, 226, 232)">
+						
 							<td class="product-name">
 								<div class="media">							
 									<div class="media-body">
-										<p class="font-large table-title"></p>										
+										<p><b>{{$row->product_name}}</b></p>										
 									</div>
 								</div>
 							</td>
 
 							<td class="product-price">
-								<span class="amount">$235.00</span>
+								<span class="amount"><b style="color: black">{{$row->product_price}} VND</b></span>
 							</td>
 
-							<td class="product-status">
-								In Stock
-							</td>
 							<td class="product-quantity">
 								<select name="product-qty" id="product-qty">
 									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
 								</select>
 							</td>
-							<td class="product-subtotal">
-								<span class="amount">$235.00</span>
-							</td>
+						
 
 							<td class="product-remove">
-								<a href="#" class="remove" title="Remove this item"><i class="fa fa-trash-o"></i></a>
+								<a onclick="return confirm('Bạn Có Chắc Muốn Xóa Danh Mục Bài Viết Không?')" href="{{URL::to('/ad/delete_sp/'.$row->cart_id)}}" class="remove" title="Remove this item"><i class="fa fa-trash-o"></i></a>
 							</td>
+							<td><a href="" style="padding: 10px;background: greenyellow;border-radius: 17px;color: black"><b>Thanh Toán</b></a></td>
 						</tr>
-						{{-- @endforeach --}}
+						 @endforeach
 					</tbody>
-
+					
 					<tfoot>
 						<tr>
 							<td colspan="6" class="actions">

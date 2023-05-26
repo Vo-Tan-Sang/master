@@ -29,7 +29,7 @@
 				<div class="pull-right auto-width-right">
 					<ul class="top-details menu-beta l-inline">
 						@auth
-						<li><a href="#"><i class="fa fa-user"></i>{{auth()->user()->name}}</a></li>
+						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{auth()->user()->name}}</a></li>
 						<li><a href="{{route('logout')}}">Logout</a></li>				
 						@else
 						<li><a href="{{route('registration')}}">Đăng kí</a></li>
@@ -195,7 +195,7 @@
 											<p class="single-item-title">{{$items->product_name}}</p>
 											<br>
 											<p class="single-item-price">
-												<span>{{$items->product_price}}</span>
+												<span>{{$items->product_price}}VND</span>
 												<br>
 												<br>
 											</p>

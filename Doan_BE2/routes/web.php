@@ -203,14 +203,15 @@ Route::get('/ad/Post_SP', function(){
   return view('Frontend.shop.index_posts',compact('all_product'));
 });
 // gio hang
-Route::post('/shopping-cart',[CartController::class,'shoppingCart']);
-Route::get('/showcart',[CartController::class,'showcart']);
-
-
-
-
-
+Route::get('/shopping-cart',[CartController::class,'shoppingCart']);
+Route::post('/save_cart/{id}',[CartController::class,'save_cart']);
+Route::get('/ad/delete_sp/{cart_id}',[CartController::class,'delete_giohang']);
+//dat hang
 Route::get('/ad/dathang',function(){
   return view('Frontend.shop.dathang');
 });
 //cart
+
+
+
+Route::get('/user/{id}',[Front\HomeController::class,'showUser']);

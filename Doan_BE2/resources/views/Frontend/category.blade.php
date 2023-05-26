@@ -29,9 +29,13 @@
 				</div>
 				<div class="pull-right auto-width-right">
 					<ul class="top-details menu-beta l-inline">
-						<li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
-						<li><a href="#">Đăng kí</a></li>
-						<li><a href="#">Đăng nhập</a></li>
+						@auth
+						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{auth()->user()->name}}</a></li>
+						<li><a href="{{route('logout')}}">Logout</a></li>				
+						@else
+						<li><a href="{{route('registration')}}">Đăng kí</a></li>
+						<li><a href="{{route('login')}}">Đăng nhập</a></li>						
+						@endauth
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -45,10 +49,13 @@
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>
 					<div class="beta-comp">
-						<form role="search" method="get" id="searchform" action="/">
-					        <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
-					        <button class="fa fa-search" type="submit" id="searchsubmit"></button>
-						</form>
+						<form action="{{URL::to('/search_product')}}" method="post">
+							{{csrf_field()}}
+						  <div class="input-group">
+								<input type="text" name ="keywords_submit" class="input-sm form-control" placeholder="Search" style="margin-left: -76px" >
+							    <input type="submit" name ="search_items" class="btn btn-info btn-sm" value="Tìm Kiếm" style="padding: 9px" >
+						  </div>
+						  </form>
 					</div>
 
 					<div class="beta-comp">
@@ -113,6 +120,7 @@
 						<li><a href="\">Trang chủ</a></li>
 						<li><a href="#">Sản phẩm</a>
 							<ul class="sub-menu">
+								
 							</ul>
 						</li>
 						<li><a href="about.html">Giới thiệu</a></li>
@@ -139,13 +147,13 @@
 								<div class="col-sm-3">
 									<div class="single-item">
 										<div class="single-item-header">
-											<img src="up/{{$items->product_image}}" alt="">
+											<a href="{{URL::to('/showproduct/'.$items->product_id)}}"><img src="up/{{$items->product_image}}" alt=""></a>
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{$items->product_name}}</p>
 											<br>
 											<p class="single-item-price">
-												<span>{{$items->product_price}}</span>
+												<span>{{$items->product_price}}VND</span>
 												<br>
 												<br>
 											</p>
