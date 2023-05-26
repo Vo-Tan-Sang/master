@@ -22,7 +22,7 @@
 			<div class="container">
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
-						<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+						<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
 						<li><a href="#"><i class="fa fa-sitemap"></i> Sitemap</a></li>
 					</ul>
 				</div>
@@ -155,19 +155,20 @@
 				<!-- Shop Products Table -->
 				<table class="shop_table beta-shopping-cart-table" cellspacing="0">
 					<thead>
-						<tr>
-							
-							<th class="product-name">Mô tả sản phẩm</th>
+						<tr><th class="product-img">Hình Ảnh</th>
+							<th class="product-name">Mô Tả Sản Phẩm</th>
 							<th class="product-price">Giá Cả</th>
 							<th class="product-status">Trạng Thái</th>
 							<th class="product-subtotal">Tổng Tiền</th>
 							<th class="product-remove">Xóa Sản Phẩm</th>
-							<th class="product-name">Hình Ảnh</th>
+							
 						</tr>
 					</thead>
 					<tbody>
-
 						<tr class="cart_item">
+							<td>
+								<img src="" alt="">
+							</td>
 							<td class="product-name">
 								<div class="media">
 									<img class="pull-left" src="assets/dest/images/shoping1.jpg" alt="">
@@ -175,7 +176,7 @@
 										<p class="font-large table-title">Men’s Belt</p>
 										<p class="table-option">Color: Red</p>
 										<p class="table-option">Size: M</p>
-										<a class="table-edit" href="">Edit</a>
+										<a class="table-edit" href="#">Edit</a>
 									</div>
 								</div>
 							</td>
@@ -187,17 +188,6 @@
 							<td class="product-status">
 								In Stock
 							</td>
-
-							<!-- <td class="product-quantity">
-								<select name="product-qty" id="product-qty">
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-								</select>
-							</td> -->
-
 							<td class="product-subtotal">
 								<span class="amount">$235.00</span>
 							</td>
