@@ -123,14 +123,14 @@
         </div> <!-- .header-body -->      
     </div> <!-- #header -->
 								
-								</div>
+								{{-- </div>
 							</div>
 						</div> <!-- .cart -->
 					</div>
 				</div>
 				<div class="clearfix"></div>
 			</div> <!-- .container -->
-		</div> <!-- .header-body -->
+		</div> <!-- .header-body --> --}}
 		<div class="header-bottom" style="background-color: #0277b8;">
 			<div class="container">
 				<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
@@ -172,13 +172,13 @@
                                                     <img src="up/{{$items->product_image}}" alt="">
                                                 </div>
                                                 <div class="col-sm-8">
-                                                    <div class="single-item-body"
+                                                    <div class="single-item-body" 
                                                         style="margin-top: 2cm;margin-left: 2cm">
                                                         <p class="single-item-title">
-                                                        <p>{{$items->product_name}}</p>
+                                                        <p name ="product_name">{{$items->product_name}}</p>
                                                         </p>
                                                         <p class="single-item-price" style="margin-top: 1cm">
-                                                            <span>{{$items->product_price}}</span>
+                                                            <span name ="product_price">{{$items->product_price}}VND</span>
                                                         </p>
                                                     </div>
                                                     <div class="clearfix"></div>
@@ -187,7 +187,7 @@
                                                         <p>{{$items->product_decs}}</p>
                                                     </div>
                                            
-													<form action="{{URL::to('/shopping-cart')}}" method="POST">
+													<form action="{{URL::to('/save_cart/'.$items->product_id)}}" method="POST">
 														{{ csrf_field() }}
                                                     <div class="single-item-caption"style="margin-top: 1cm;margin-left: 2cm">
 														<input name="qty" type="number" min="1" value = "1"/>                           

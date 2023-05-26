@@ -153,7 +153,7 @@
 											<p class="single-item-title">{{$items->product_name}}</p>
 											<br>
 											<p class="single-item-price">
-												<span>{{$items->product_price}}</span>
+												<span>{{$items->product_price}}VND</span>
 												<br>
 												<br>
 											</p>
