@@ -193,11 +193,8 @@ $all_product = DB::table('table_posts_baiviet')
 return view('admin.lietkebaivietSP',compact('all_product'));
 });
 
-
-
-
-
-
 Route::get('/ad/dathang',function(){
   return view('Frontend.shop.dathang');
 });
+
+Route::get('/user/{id}',[Front\HomeController::class,'showUser']);

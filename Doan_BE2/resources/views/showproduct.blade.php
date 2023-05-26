@@ -4,7 +4,7 @@
 	<base href="{{asset('/')}}">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Levents - Login</title>
+	<title>Levents - Chi tiet san pham </title>
 	<link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -29,9 +29,13 @@
 				</div>
 				<div class="pull-right auto-width-right">
 					<ul class="top-details menu-beta l-inline">
-
-						<li><a href="#">Đăng kí</a></li>
-						<li><a href="#">Đăng nhập</a></li>
+                        @auth
+						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{auth()->user()->name}}</a></li>
+						<li><a href="{{route('logout')}}">Logout</a></li>				
+						@else
+						<li><a href="{{route('registration')}}">Đăng kí</a></li>
+						<li><a href="{{route('login')}}">Đăng nhập</a></li>						
+						@endauth
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -45,10 +49,13 @@
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>
 					<div class="beta-comp">
-						<form role="search" method="get" id="searchform" action="/">
-					        <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
-					        <button class="fa fa-search" type="submit" id="searchsubmit"></button>
-						</form>
+						<form action="{{URL::to('/search_product')}}" method="post">
+							{{csrf_field()}}
+						  <div class="input-group">
+								<input type="text" name ="keywords_submit" class="input-sm form-control" placeholder="Search" style="margin-left: -76px" >
+							    <input type="submit" name ="search_items" class="btn btn-info btn-sm" value="Tìm Kiếm" style="padding: 9px" >
+						  </div>
+						  </form>
 					</div>
 
 					<div class="beta-comp">
@@ -113,6 +120,9 @@
 						<li><a href="/">Trang chủ</a></li>
 						<li><a href="#">Sản phẩm</a>
 							<ul class="sub-menu">
+								@foreach ($category as $item)
+									<li><a href="{{route('category',['brand_id' =>$item->category_id])}}">{{$item->category_name}}</a></li>
+								@endforeach
 							</ul>
 						</li>
 						<li><a href="about.html">Giới thiệu</a></li>

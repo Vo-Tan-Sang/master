@@ -26,10 +26,10 @@ class HomeController extends Controller
     }
     // show
     public function show($product_id){       
-        //$category = DB::table('product_categories')->where('category_status',0)->orderBy('category_name','ASC')->get();
+        $category = DB::table('product_categories')->where('category_status',0)->orderBy('category_name','ASC')->get();
         $product = DB::table('product')->where('product_id',$product_id)->get();
         $all_product = DB::table('product')->where('product_status','0')->orderby('category_id','desc')->limit(4)->get();
-        return view('showproduct')->with('product',$product)->with('all_product',$all_product);;
+        return view('showproduct')->with('product',$product)->with('all_product',$all_product)->with('category',$category);
     }
     public function searchProduct(Request $request){
         $keywords = $request->keywords_submit; 
@@ -37,5 +37,8 @@ class HomeController extends Controller
         $search_product = DB::table('product')->where('product_name','like','%'.$keywords.'%')->get();
         return view('Frontend.search_product')->with('search_product',$search_product)->with('category',$category);
     }
-    
+    public function showUser($id){       
+        $users = DB::table('users')->where('id',$id)->get();
+        return view('user')->with('users',$users);
+    }
 }
