@@ -193,6 +193,15 @@ $all_product = DB::table('table_posts_baiviet')
 ->get();
 return view('admin.lietkebaivietSP',compact('all_product'));
 });
+Route::get('/ad/postsSP/{id}',[BaivietController::class,'Post_SP']);
+Route::get('/ad/Post_SP', function(){
+  $all_product = DB::table('table_posts_baiviet')
+  ->join('product','product.product_id', '=','table_posts_baiviet.idsanpham')
+  ->join('product_categories','product_categories.category_id','=','product.category_id')
+  ->join('brand','brand.brand_id','=','product.brand_id')->distinct()
+  ->get();
+  return view('index_posts',compact('all_product'));
+});
 
 
 
