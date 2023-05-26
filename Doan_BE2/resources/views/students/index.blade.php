@@ -22,6 +22,7 @@
                                         <th>Address</th>
                                         <th>Mobile</th>
                                         <th>Actions</th>
+                                        <th>Actios</th>
                                     </tr>
                                 </thead>
                                 <tbody>
