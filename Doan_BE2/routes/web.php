@@ -12,6 +12,7 @@ use App\Http\Controllers\danhmucbaivietController;
 use App\Http\Controllers\BrandProduct;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\BaivietController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\DB;
 
 
@@ -56,8 +57,13 @@ Route::get('/shop/product/{id}',[Front\ShopController::class,'show']);
 //backend
 //Route::get('/admin',[AdminController::class,'index']);
  Route::get('/ad/login_admin',[AdminController::class,'index']);
+
+
  //trang chu 
- Route::get('/ad/dashboard',[AdminController::class,'show']); 
+ //Route::get('/ad/dashboard',[AdminController::class,'show']); 
+
+
+ 
  Route::post('/ad/admin-dashboard',[AdminController::class,'dashboard']);
  Route::get('/ad/logout',[AdminController::class,'logout']);
  //category_product_them
@@ -187,3 +193,14 @@ $all_product = DB::table('table_posts_baiviet')
 ->get();
 return view('admin.lietkebaivietSP',compact('all_product'));
 });
+
+
+
+
+
+
+Route::get('/ad/dathang',function(){
+  return view('Frontend.shop.dathang');
+});
+//cart
+Route::post('/shopping-cart/{id}',[CartController::class,'shoppingCart']);

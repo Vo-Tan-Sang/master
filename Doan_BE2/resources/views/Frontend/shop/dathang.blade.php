@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+	<base href="{{asset('/')}}">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,11 @@
 	<link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/dest/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/dest/vendors/colorbox/example3/colorbox.css">
-	<link rel="stylesheet" title="style" href="assets/dest/css/style.css">
-	<link rel="stylesheet" href="assets/dest/css/animate.css">
-	<link rel="stylesheet" title="style" href="assets/dest/css/huong-style.css">
+	<link rel="stylesheet" href="front/css/font-awesome.min.css">
+	<link rel="stylesheet" href="front/vendors/colorbox/example3/colorbox.css">
+	<link rel="stylesheet" title="style" href="front/css/style.css">
+	<link rel="stylesheet" href="front/css/animate.css">
+	<link rel="stylesheet" title="style" href="front/css/huong-style.css">
 </head>
 <body>
 	
@@ -321,14 +322,14 @@
 	
 
 	<!-- include js files -->
-	<script src="assets/dest/js/jquery.js"></script>
-	<script src="assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
+	<script src="front/js/jquery.js"></script>
+	<script src="front/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-	<script src="assets/dest/vendors/bxslider/jquery.bxslider.min.js"></script>
-	<script src="assets/dest/vendors/colorbox/jquery.colorbox-min.js"></script>
-	<script src="assets/dest/vendors/animo/Animo.js"></script>
-	<script src="assets/dest/vendors/dug/dug.js"></script>
-	<script src="assets/dest/js/scripts.min.js"></script>
+	<script src="front/vendors/bxslider/jquery.bxslider.min.js"></script>
+	<script src="front/vendors/colorbox/jquery.colorbox-min.js"></script>
+	<script src="front/vendors/animo/Animo.js"></script>
+	<script src="front/vendors/dug/dug.js"></script>
+	<script src="front/js/scripts.min.js"></script>
 	<!--customjs-->
 	<script type="text/javascript">
     $(function() {

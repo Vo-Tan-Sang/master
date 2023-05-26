@@ -14,7 +14,7 @@ class AdminController extends Controller
      public function AuthLogin(){
          $admin_id = Session::get('admin_id');
          if($admin_id){
-            return Redirect::to('admin.dashboard');
+            return view('admin.dashboard');
          }
          else{
             return Redirect::to('/ad/login_admin')->send();
@@ -38,7 +38,8 @@ class AdminController extends Controller
          if($result){
             Session::put('admin_name',$result->admin_name); 
             Session::put('admin_id',$result->admin_id);
-             return Redirect::to('/ad/dashboard');
+            //  return Redirect::to('/ad/dashboard');
+            return view('admin.dashboard');
          }else{
              Session::put('message','Tài khoản hoặc mật khẩu không đúng.Xin nhập lại');
              return Redirect::to('/ad/login_admin');
