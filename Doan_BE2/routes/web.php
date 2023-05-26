@@ -202,7 +202,9 @@ Route::get('/ad/Post_SP', function(){
   ->get();
   return view('Frontend.shop.index_posts',compact('all_product'));
 });
-
+// gio hang
+Route::post('/shopping-cart',[CartController::class,'shoppingCart']);
+Route::get('/showcart',[CartController::class,'showcart']);
 
 
 
@@ -212,4 +214,3 @@ Route::get('/ad/dathang',function(){
   return view('Frontend.shop.dathang');
 });
 //cart
-Route::post('/shopping-cart/{id}',[CartController::class,'shoppingCart']);

@@ -152,6 +152,9 @@
 		<div id="content">
 			
 			<div class="table-responsive">
+				<?php
+				$items = Cart::getContent();
+					?>
 				<!-- Shop Products Table -->
 				<table class="shop_table beta-shopping-cart-table" cellspacing="0">
 					<thead>
@@ -159,24 +162,22 @@
 							<th class="product-name">Mô Tả Sản Phẩm</th>
 							<th class="product-price">Giá Cả</th>
 							<th class="product-status">Trạng Thái</th>
+							<th class="product-quantity">Số Lượng</th>
 							<th class="product-subtotal">Tổng Tiền</th>
 							<th class="product-remove">Xóa Sản Phẩm</th>
 							
 						</tr>
 					</thead>
 					<tbody>
+						{{-- @foreach($items as $row) { --}}
 						<tr class="cart_item">
 							<td>
 								<img src="" alt="">
 							</td>
 							<td class="product-name">
-								<div class="media">
-									<img class="pull-left" src="assets/dest/images/shoping1.jpg" alt="">
+								<div class="media">							
 									<div class="media-body">
-										<p class="font-large table-title">Men’s Belt</p>
-										<p class="table-option">Color: Red</p>
-										<p class="table-option">Size: M</p>
-										<a class="table-edit" href="#">Edit</a>
+										<p class="font-large table-title"></p>										
 									</div>
 								</div>
 							</td>
@@ -188,6 +189,15 @@
 							<td class="product-status">
 								In Stock
 							</td>
+							<td class="product-quantity">
+								<select name="product-qty" id="product-qty">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</td>
 							<td class="product-subtotal">
 								<span class="amount">$235.00</span>
 							</td>
@@ -196,7 +206,7 @@
 								<a href="#" class="remove" title="Remove this item"><i class="fa fa-trash-o"></i></a>
 							</td>
 						</tr>
-						
+						{{-- @endforeach --}}
 					</tbody>
 
 					<tfoot>
