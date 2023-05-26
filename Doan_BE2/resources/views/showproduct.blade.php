@@ -1,6 +1,13 @@
+<?php
+	session_start();
+	//  $_SESSION['user_id'] = "";
+	if (empty($_SESSION['user_id'])){
+		$_SESSION['user_id'] = "";
+	}
+    echo $_SESSION['user_id'];	
+?>
 <!doctype html>
 <html lang="en">
-
 <head>
     <base href="{{asset('/')}}">
     <meta charset="UTF-8">
@@ -20,7 +27,10 @@
 </head>
 
 <body>
-
+	<?php
+		use App\Http\Controllers\AuthManager;
+		$user = new AuthManager;
+	?>
 	<div id="header">
 		<div class="header-top">
 			<div class="container">
@@ -32,13 +42,22 @@
 				</div>
 				<div class="pull-right auto-width-right">
 					<ul class="top-details menu-beta l-inline">
-                        @auth
+                        {{-- @auth
 						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{auth()->user()->name}}</a></li>
 						<li><a href="{{route('logout')}}">Logout</a></li>				
 						@else
 						<li><a href="{{route('registration')}}">Đăng kí</a></li>
 						<li><a href="{{route('login')}}">Đăng nhập</a></li>						
-						@endauth
+						@endauth --}}
+                        @if (empty($_SESSION['user_id']))
+						<li><a href="{{route('registration')}}">Đăng kí</a></li>
+						<li><a href="{{route('login')}}">Đăng nhập</a></li>	
+					@endif
+
+					@if (!empty($_SESSION['user_id']))
+						<li><a href="#"><i class="fa fa-user"></i>{{$user->findAuth_id($_SESSION['user_id'])[0]->name}}</a></li>
+						<li><a href="{{route('logout')}}">Logout</a></li>	
+					@endif
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -190,9 +209,10 @@
 													<form action="{{URL::to('/save_cart/'.$items->product_id)}}" method="POST">
 														{{ csrf_field() }}
                                                     <div class="single-item-caption"style="margin-top: 1cm;margin-left: 2cm">
-														<input name="qty" type="number" min="1" value = "1"/>                           
-														<input name="productid_hidden" type="hidden" min="1" value = "{{$items->product_id}}" />
+														<input style="width: 70px;" name="qty" type="number" min="1" value = "1"/> <br>                           
+														<input name="productid_hidden" type="hidden" min="1" value = "{{$items->product_id}}" /> <br>
 														<button class="add-to-cart pull-left" type="submit" href=""><i class="fa fa-shopping-cart"></i></button>
+                                                        <a class="beta-btn primary" href="/ad/dathang/{{$items->product_id}}">Mua hang</a>
                                                         <a class="beta-btn primary" href="">Details <i class="fa fa-chevron-right"></i></a>
                                                         <div class="clearfix"></div>
                                                     </div>

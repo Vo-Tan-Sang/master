@@ -19,6 +19,7 @@ class AuthManager extends Controller
         return view('registration');
     }
     function loginPost(Request $request){
+        session_start();
         $request->validate([
             'email' => 'required',
             'password' => 'required',
@@ -28,6 +29,7 @@ class AuthManager extends Controller
             $category = DB::table('product_categories')->where('category_status',0)->orderBy('category_name','ASC')->get();
             $all_product = DB::table('product')->where('product_status','0')->orderby('category_id','desc')->limit(12)->get(); 
             // return redirect()->intended(route('Front.index'));
+            $_SESSION['user_id'] = Auth::user()->id;
             return view('Frontend.index')->with('category',$category)->with('all_product',$all_product);
         }
         return redirect(route('login'))->with("Error","Login details are not valid");
@@ -53,4 +55,8 @@ class AuthManager extends Controller
         Auth::logout();
         return redirect(route('login'));
     }
+    public function findAuth_id($id){
+        $data = DB::table('users')->where('id', '=',$id)->get();
+        return $data;
+   }
 }
