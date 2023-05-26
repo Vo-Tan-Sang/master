@@ -1,6 +1,6 @@
 <?php
 	//session_start();
-	//  $_SESSION['user_id'] = "";
+	  //$_SESSION['user_id'] = "";
 	if (empty($_SESSION['user_id'])){
 		$_SESSION['user_id'] = "";
 	}
@@ -39,22 +39,22 @@
 				</div>
 				<div class="pull-right auto-width-right">
 					<ul class="top-details menu-beta l-inline">
-						{{-- @auth
+						@auth
 						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{auth()->user()->name}}</a></li>
 						<li><a href="{{route('logout')}}">Logout</a></li>				
 						@else
 						<li><a href="{{route('registration')}}">Đăng kí</a></li>
 						<li><a href="{{route('login')}}">Đăng nhập</a></li>						
-						@endauth --}}
-						@if (empty($_SESSION['user_id']))
+						@endauth
+						{{-- @if (empty($_SESSION['user_id']))
 						<li><a href="{{route('registration')}}">Đăng kí</a></li>
 						<li><a href="{{route('login')}}">Đăng nhập</a></li>	
 						@endif
 
 					@if (!empty($_SESSION['user_id']))
-						<li><a href="#"><i class="fa fa-user"></i>{{$user->findAuth_id($_SESSION['user_id'])[0]->name}}</a></li>
+						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{$user->findAuth_id($_SESSION['user_id'])[0]->name}}</a></li>
 						<li><a href="{{route('logout')}}">Logout</a></li>	
-					@endif
+					@endif --}}
 					</ul>
 				</div>
 				<div class="clearfix"></div>

@@ -1,10 +1,9 @@
 <?php
 	session_start();
-	//  $_SESSION['user_id'] = "";
+	 // $_SESSION['user_id'] = "";
 	if (empty($_SESSION['user_id'])){
 		$_SESSION['user_id'] = "";
 	}
-    echo $_SESSION['user_id'];	
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,10 +26,10 @@
 </head>
 
 <body>
-	<?php
-		use App\Http\Controllers\AuthManager;
-		$user = new AuthManager;
-	?>
+    <?php
+use App\Http\Controllers\AuthManager;
+$user = new AuthManager;
+?>
 	<div id="header">
 		<div class="header-top">
 			<div class="container">
@@ -55,7 +54,7 @@
 					@endif
 
 					@if (!empty($_SESSION['user_id']))
-						<li><a href="#"><i class="fa fa-user"></i>{{$user->findAuth_id($_SESSION['user_id'])[0]->name}}</a></li>
+						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{$user->findAuth_id($_SESSION['user_id'])[0]->name}}</a></li>
 						<li><a href="{{route('logout')}}">Logout</a></li>	
 					@endif
 					</ul>
