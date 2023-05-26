@@ -38,7 +38,7 @@
 					@endif
 
 					@if (!empty($_SESSION['user_id']))
-						<li><a href="#"><i class="fa fa-user"></i>{{$user->findAuth_id($_SESSION['user_id'])[0]->name}}</a></li>
+						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{$user->findAuth_id($_SESSION['user_id'])[0]->name}}</a></li>
 						<li><a href="{{route('logout')}}">Logout</a></li>	
 					@endif
 					</ul>
@@ -119,7 +119,7 @@
 				<div class="visible-xs clearfix"></div>
 				<nav class="main-menu">
 					<ul class="l-inline ov">
-						<li><a href="index.html">Trang chủ</a></li>
+						<li><a href="/">Trang chủ</a></li>
 						<li><a href="#">Sản phẩm</a>
 							<ul class="sub-menu">
 								<li><a href="product_type.html">Sản phẩm 1</a></li>
@@ -128,7 +128,7 @@
 							</ul>
 						</li>
 						<li><a href="about.html">Giới thiệu</a></li>
-						<li><a href="contacts.html">Liên hệ</a></li>
+						<li><a href="/ad/Post_SP">Bài Viết</a></li>
 					</ul>
 					<div class="clearfix"></div>
 				</nav>

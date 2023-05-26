@@ -210,15 +210,14 @@ Route::get('/ad/delete_sp/{cart_id}',[CartController::class,'delete_giohang']);
 //dat hang
 Route::get('/ad/dathang/{product_id}',function ($product_id) {
   session_start();
-  if (empty($_SESSION['user_id'])){
-    echo "<script>alert('Chua dang nhap. vui long dang nhap tai khoan') </script>";
+   if (empty($_SESSION['user_id'])){
+     echo "<script>alert('Chua dang nhap. vui long dang nhap tai khoan') </script>";
     return view ('login');
-  } 
-  else {
+   } 
+
     return view('Frontend.shop.dathang')->with('product_id',$product_id);
-  }
+  
 });
 Route::post('/ad/xulydathang/{product_id}',[DonHangController::class , 'datHang']);
 //cart
-
 Route::get('/user/{id}',[Front\HomeController::class,'showUser']);

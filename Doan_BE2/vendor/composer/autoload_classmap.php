@@ -15,6 +15,7 @@ return array(
     'App\\Http\\Controllers\\CartController' => $baseDir . '/app/Http/Controllers/CartController.php',
     'App\\Http\\Controllers\\CategoryProduct' => $baseDir . '/app/Http/Controllers/CategoryProduct.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\DonHangController' => $baseDir . '/app/Http/Controllers/DonHangController.php',
     'App\\Http\\Controllers\\Front\\HomeController' => $baseDir . '/app/Http/Controllers/Front/HomeController.php',
     'App\\Http\\Controllers\\Front\\ShopController' => $baseDir . '/app/Http/Controllers/Front/ShopController.php',
     'App\\Http\\Controllers\\ProductController' => $baseDir . '/app/Http/Controllers/ProductController.php',

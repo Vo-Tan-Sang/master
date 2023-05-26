@@ -519,6 +519,7 @@ class ComposerStaticInitd69f7fc302bf8cbfa4479108e8bbd20d
         'App\\Http\\Controllers\\CartController' => __DIR__ . '/../..' . '/app/Http/Controllers/CartController.php',
         'App\\Http\\Controllers\\CategoryProduct' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryProduct.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DonHangController' => __DIR__ . '/../..' . '/app/Http/Controllers/DonHangController.php',
         'App\\Http\\Controllers\\Front\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/HomeController.php',
         'App\\Http\\Controllers\\Front\\ShopController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/ShopController.php',
         'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
