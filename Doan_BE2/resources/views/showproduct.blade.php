@@ -186,22 +186,7 @@
                                                         style="margin-left: 2cm ; margin-top: 1cm">
                                                         <p>{{$items->product_decs}}</p>
                                                     </div>
-<<<<<<< HEAD
-                                                    <form action="{{URL::to('/shopping-cart/'.$items->product_id)}}"
-                                                        method="POST">
-                                                        {{ csrf_field() }}
-                                                        <div class="single-item-caption"
-                                                            style="margin-top: 1cm;margin-left: 2cm">
-                                                            <button class="add-to-cart pull-left" type="submit"
-                                                                href=""><i class="fa fa-shopping-cart"></i></button>
-                                                            <input name="productid_hidden" type="hidden" min="1"
-                                                                value="{{$items->product_id}}" />
-                                                            <a class="beta-btn primary" href="">Details <i
-                                                                    class="fa fa-chevron-right"></i></a>
-                                                            <div class="clearfix"></div>
-                                                        </div>
-                                                    </form>
-=======
+                                           
 													<form action="{{URL::to('/shopping-cart')}}" method="POST">
 														{{ csrf_field() }}
                                                     <div class="single-item-caption"style="margin-top: 1cm;margin-left: 2cm">
@@ -212,7 +197,6 @@
                                                         <div class="clearfix"></div>
                                                     </div>
 													</form>
->>>>>>> BranchAdmin
                                                 </div>
                                                 @endforeach
                                             </div>
