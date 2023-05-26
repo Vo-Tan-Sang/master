@@ -22,7 +22,7 @@
 			<div class="container">
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
-						<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+						<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
 						<li><a href="#"><i class="fa fa-sitemap"></i> Sitemap</a></li>
 					</ul>
 				</div>
@@ -127,101 +127,6 @@
 				<div class="visible-xs clearfix"></div>
 				<nav class="main-menu">
 					<ul class="l-inline ov">
-						<li><a href="index.html">Home</a>
-							<ul class="sub-menu">
-								<li><a href="home_10.html">Home Portfolio</a></li>
-								<li><a href="home_4.html">Company Intro 1</a></li>
-								<li><a href="home_5.html">Company Intro 2</a></li>
-								<li><a href="home_7.html">Company Intro 3</a></li>
-								<li><a href="home_6.html">Home Classic 1</a></li>
-								<li><a href="home_8.html">Home Classic 2</a></li>
-								<li><a href="home_9.html">Home Classic 3</a></li>
-								<li><a href="index.html">Home Shop 1</a></li>
-								<li><a href="home_2.html">Home Shop 2</a></li>
-								<li><a href="home_3.html">Home Shop 3</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Pages</a>
-							<ul class="sub-menu">
-								<li><a href="about_1.html">About 1</a></li>
-								<li><a href="about_2.html">About 2</a></li>
-								<li><a href="testimonials.html">Testimonials</a></li>
-								<li><a href="text_page.html">Text Page</a></li>
-								<li><a href="typography.html">Typography</a></li>
-								<li><a href="accordion_toggles.html">Accordion and Toggles</a></li>
-								<li><a href="buttons.html">Buttons</a></li>
-								<li><a href="custom_callout_box.html">Custom Callout Box</a></li>
-								<li><a href="404.html">Page 404</a></li>
-								<li><a href="under_construction.html">Coming Soon</a></li>
-							</ul>
-						</li>
-						<li><a href="features.html">Features</a></li>
-						<li><a href="#">Portfolio</a>
-							<ul class="sub-menu">
-								<li><a href="portfolio_type_a.html">Portfolio type A</a></li>
-								<li><a href="#">Portfolio type B</a>
-									<ul class="sub-menu">
-										
-										<li><a href="portfolio_3col.html">Portfolio B - 3 Columns</a></li>
-										<li><a href="portfolio_4col.html">Portfolio B - 4 Columns</a></li>
-									</ul>
-								</li>
-								<li><a href="portfolio_single.html">Portfolio Item</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Blog</a>
-							<ul class="sub-menu">
-								<li><a href="blog_fullwidth_1col.html">Blog Full Width</a>
-									<ul class="sub-menu">
-										<li><a href="blog_fullwidth_2col.html">Blog Full Width - 2 Columns</a></li>
-										<li><a href="blog_fullwidth_3col.html">Blog Full Width - 3 Columns</a></li>
-										<li><a href="blog_fullwidth_4col.html">Blog Full Width - 4 Columns</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Blog Type A</a>
-									<ul class="sub-menu">
-										<li><a href="blog_with_sidebarleft_type_a.html">Blog A - Left Sidebar</a></li>
-										<li><a href="blog_with_sidebarright_type_a.html">Blog A - Right Sidebar</a></li>
-									</ul>
-								</li>
-								<li><a href="blog_with_sidebarleft_type_b.html">Blog Type B</a></li>
-								<li><a href="#">Blog Type C</a>
-									<ul class="sub-menu">
-										<li><a href="blog_with_sidebarleft_type_c.html">Blog C - Left Sidebar</a></li>
-										<li><a href="blog_with_sidebarleft_type_c_2cols.html">Blog C - 2 Columns</a></li>
-									</ul>
-								</li>
-								<li><a href="blog_with_sidebarleft_type_d.html">Blog Type D</a></li>
-								<li><a href="#">Blog Type E</a>
-									<ul class="sub-menu">
-										<li><a href="blog_with_sidebarleft_type_e.html">Blog E - Left Sidebar</a></li>
-										<li><a href="blog_with_2sidebars_type_e.html">Blog E - 2 Sidebars</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Blog Single Post</a>
-									<ul class="sub-menu">
-										<li><a href="single_type_image.html">Single Post Image</a></li>
-										<li><a href="single_type_gallery.html">Single Post Gallery</a></li>
-										<li><a href="single_type_video.html">Single Post Video</a></li>
-										<li><a href="single_type_audio.html">Single Post Audio</a></li>
-										<li><a href="single_type_slideshow.html">Single Post Slideshow</a></li>
-										<li><a href="single_type_quote.html">Single Post Quote</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href="index.html">Shop</a>
-							<ul class="sub-menu">
-								<li><a href="index.html">Home Shop 1</a></li>
-								<li><a href="home_2.html">Home Shop 2</a></li>
-								<li><a href="home_3.html">Home Shop 3</a></li>
-								<li><a href="checkout.html">Checkout</a></li>
-								<li><a href="pricing.html">Pricing</a></li>
-								<li><a href="shopping_cart.html">Shopping Cart</a></li>
-								<li><a href="product.html">Product</a></li>
-							</ul>
-						</li>
-						<li><a href="contacts.html">Contact</a></li>
 					</ul>
 					<div class="clearfix"></div>
 				</nav>
@@ -251,16 +156,17 @@
 				<table class="shop_table beta-shopping-cart-table" cellspacing="0">
 					<thead>
 						<tr>
-							<th class="product-name">Product</th>
-							<th class="product-price">Price</th>
-							<th class="product-status">Status</th>
-							<th class="product-quantity">Qty.</th>
-							<th class="product-subtotal">Total</th>
-							<th class="product-remove">Remove</th>
+							
+							<th class="product-name">Mô tả sản phẩm</th>
+							<th class="product-price">Giá Cả</th>
+							<th class="product-status">Trạng Thái</th>
+							<th class="product-subtotal">Tổng Tiền</th>
+							<th class="product-remove">Xóa Sản Phẩm</th>
+							<th class="product-name">Hình Ảnh</th>
 						</tr>
 					</thead>
 					<tbody>
-					
+
 						<tr class="cart_item">
 							<td class="product-name">
 								<div class="media">
@@ -269,7 +175,7 @@
 										<p class="font-large table-title">Men’s Belt</p>
 										<p class="table-option">Color: Red</p>
 										<p class="table-option">Size: M</p>
-										<a class="table-edit" href="#">Edit</a>
+										<a class="table-edit" href="">Edit</a>
 									</div>
 								</div>
 							</td>
@@ -282,7 +188,7 @@
 								In Stock
 							</td>
 
-							<td class="product-quantity">
+							<!-- <td class="product-quantity">
 								<select name="product-qty" id="product-qty">
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -290,7 +196,7 @@
 									<option value="4">4</option>
 									<option value="5">5</option>
 								</select>
-							</td>
+							</td> -->
 
 							<td class="product-subtotal">
 								<span class="amount">$235.00</span>
@@ -300,84 +206,7 @@
 								<a href="#" class="remove" title="Remove this item"><i class="fa fa-trash-o"></i></a>
 							</td>
 						</tr>
-						<tr class="cart_item">
-							<td class="product-name">
-								<div class="media">
-									<img class="pull-left" src="assets/dest/images/shoping2.jpg" alt="">
-									<div class="media-body">
-										<p class="font-large table-title">Men’s Belt</p>
-										<p class="table-option">Color: Red</p>
-										<p class="table-option">Size: M</p>
-										<a class="table-edit" href="#">Edit</a>
-									</div>
-								</div>
-							</td>
-
-							<td class="product-price">
-								<span class="amount">$235.00</span>
-							</td>
-
-							<td class="product-status">
-								In Stock
-							</td>
-
-							<td class="product-quantity">
-								<select name="product-qty" id="product-qty">
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-								</select>
-							</td>
-
-							<td class="product-subtotal">
-								<span class="amount">$235.00</span>
-							</td>
-
-							<td class="product-remove">
-								<a href="#" class="remove" title="Remove this item"><i class="fa fa-trash-o"></i></a>
-							</td>
-						</tr>
-						<tr class="cart_item">
-							<td class="product-name">
-								<div class="media">
-									<img class="pull-left" src="assets/dest/images/shoping3.jpg" alt="">
-									<div class="media-body">
-										<p class="font-large table-title">Men’s Belt</p>
-										<p class="table-option">Color: Red</p>
-										<p class="table-option">Size: M</p>
-										<a class="table-edit" href="#">Edit</a>
-									</div>
-								</div>
-							</td>
-
-							<td class="product-price">
-								<span class="amount">$235.00</span>
-							</td>
-
-							<td class="product-status">
-								In Stock
-							</td>
-
-							<td class="product-quantity">
-								<select name="product-qty" id="product-qty">
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-								</select>
-							</td>
-
-							<td class="product-subtotal">
-								<span class="amount">$235.00</span>
-							</td>
-
-							<td class="product-remove">
-								<a href="#" class="remove" title="Remove this item"><i class="fa fa-trash-o"></i></a>
-							</td>
-						</tr>
+						
 					</tbody>
 
 					<tfoot>

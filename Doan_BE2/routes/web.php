@@ -12,6 +12,7 @@ use App\Http\Controllers\danhmucbaivietController;
 use App\Http\Controllers\BrandProduct;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\BaivietController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\DB;
 
 
@@ -201,3 +202,5 @@ return view('admin.lietkebaivietSP',compact('all_product'));
 Route::get('/ad/dathang',function(){
   return view('Frontend.shop.dathang');
 });
+//cart
+Route::post('/shopping-cart/{id}',[CartController::class,'shoppingCart']);
